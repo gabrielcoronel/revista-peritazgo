@@ -1,3 +1,4 @@
+import './index.css'
 import 'animate.css'
 import { useState } from 'react'
 import Menu from './components/Menu'
@@ -16,15 +17,6 @@ const units = [
       {
         name: "Expresiones",
         subtopics: [
-          {
-            name: "A"
-          },
-          {
-            name: "A"
-          },
-          {
-            name: "A"
-          }
         ],
         articleComponent: <ExpressionsArticle />
       },
