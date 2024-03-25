@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body {
+    /* regular_background según la configuración de tailwindCSS */
+    background-color: #262626;
+}

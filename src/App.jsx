@@ -5,8 +5,9 @@ import Menu from './components/Menu'
 import Header from './components/Header'
 import ArticleDisplay from './components/ArticleDisplay'
 import FloatingActionButton from './components/FloatingActionButton'
-import ExpressionsArticle from './components/articles/ExpressionsArticle'
 import BasicConceptsArticle from './components/articles/BasicConceptsArticle'
+import ExpressionsArticle from './components/articles/ExpressionsArticle'
+import ControlFlowStatementsArticle from './components/articles/ControlFlowStatementsArticle'
 import { ContentSelectorProvider } from './context/contentSelector'
 import { FiMenu } from 'react-icons/fi'
 import { IoClose } from 'react-icons/io5'
@@ -68,6 +69,25 @@ const units = [
           },
         ],
         articleComponent: <ExpressionsArticle />
+      },
+      {
+        name: "Estructuras de Control",
+        sectionScrollId: "scroll-id__control-flow-statements-title",
+        subtopics: [
+          {
+            name: "Estructuras de Control Secuenciales",
+            sectionScrollId: "scroll-id__control-flow-statements-sequential"
+          },
+          {
+            name: "Estructuras de Control Selectivas",
+            sectionScrollId: "scroll-id__control-flow-statements-choice"
+          },
+          {
+            name: "Estructuras de Control Repetitivas",
+            sectionScrollId: "scroll-id__control-flow-statements-looping"
+          }
+        ],
+        articleComponent: <ControlFlowStatementsArticle />
       }
     ]
   }
