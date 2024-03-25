@@ -99,12 +99,13 @@ const TopicsEntry = ({ topic, isSelected, onSelect }) => {
 
     const handleEntryClick = () => {
       setArticleComponent(topic.articleComponent)
+      setSectionScrollId(topic.sectionScrollId)
       onSelect()
     }
 
     const handleSubentryClick = (index) => {
         setArticleComponent(topic.articleComponent)
-        setSectionScrollId(topic.subtopics[index].setSectionScrollId)
+        setSectionScrollId(topic.subtopics[index].sectionScrollId)
         onSelect()
     }
 

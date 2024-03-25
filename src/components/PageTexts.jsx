@@ -1,14 +1,20 @@
-export const Heading = ({ text }) => {
+export const Heading = ({ text, scrollId }) => {
     return (
-        <span className="text-3xl font-bold text-heading_text bg-regular_background">
+        <span
+          className="text-3xl font-bold text-heading_text bg-regular_background"
+          id={scrollId}
+        >
             {text}
         </span>
     )
 }
 
-export const Subheading1 = ({ text }) => {
+export const Subheading1 = ({ text, scrollId }) => {
     return (
-        <span className="text-2xl font-bold text-heading_text bg-regular_background">
+        <span
+          className="text-2xl font-bold text-heading_text bg-regular_background"
+          id={scrollId}
+        >
             {text}
         </span>
     )

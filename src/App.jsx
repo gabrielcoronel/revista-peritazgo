@@ -16,7 +16,28 @@ const units = [
     topics: [
       {
         name: "Expresiones",
+        sectionScrollId: "scroll-id__expressions-title",
         subtopics: [
+          {
+            name: "Valores",
+            sectionScrollId: "scroll-id__expressions-values"
+          },
+          {
+            name: "Operadores",
+            sectionScrollId: "scroll-id__expressions-operators"
+          },
+          {
+            name: "Expresiones Aritméticas",
+            sectionScrollId: "scroll-id__expressions-arithmetic-expressions"
+          },
+          {
+            name: "Expresiones Lógicas",
+            sectionScrollId: "scroll-id__expressions-logical-expressions"
+          },
+          {
+            name: "Evaluación",
+            sectionScrollId: "scroll-id__expressions-evaluation"
+          },
         ],
         articleComponent: <ExpressionsArticle />
       },
@@ -28,7 +49,7 @@ const Main = () => {
   const [isShowingMenu, setIsShowingMenu] = useState(false)
 
   return (
-    <div className="flex flex-col w-full h-screen max-h-screen overflow-hidden">
+    <div className="flex flex-col w-full h-screen max-h-screen">
       <div className="w-full">
         <Header
           onAction={() => setIsShowingMenu(!isShowingMenu)}

@@ -1,4 +1,5 @@
 import 'animate.css'
+import { useSectionScrolling } from '../../utilities/hooks'
 import ArticleContainer from '../ArticleContainer'
 import {
   Heading,
@@ -17,9 +18,11 @@ import { SiCodereview } from 'react-icons/si'
 const ExpressionsPracticeUrl = "https://drive.google.com/file/d/117ed-UnlrMOCiJnBGWOT0C4H5UYXRqlW/view?usp=sharing"
 
 export default () => {
+    useSectionScrolling()
+
     return (
         <ArticleContainer>
-          <Heading text="Expresiones" />
+          <Heading text="Expresiones" scrollId="scroll-id__expressions-title" />
 
           <RegularText>
             Las expresiones son combinaciones de <BoldText>valores</BoldText>
@@ -33,7 +36,7 @@ export default () => {
             produce un <BoldText>valor resultante</BoldText>.
           </RegularText>
 
-          <Subheading1 text="Valores" />
+          <Subheading1 text="Valores" scrollId="scroll-id__expressions-values" />
 
           <RegularText>
             Existen dos principales tipos de valores: los literales y las variables.
@@ -49,7 +52,7 @@ export default () => {
             variable.
           </RegularText>
 
-          <Subheading1 text="Operadores" />
+          <Subheading1 text="Operadores" scrollId="scroll-id__expressions-operators" />
 
           <RegularText>
             De manera general, un operador es un símbolo que indica una operación.
@@ -329,7 +332,7 @@ export default () => {
             </RegularText>
           </UnorderedList>
 
-          <Subheading1 text="Expresiones Aritméticas" />
+          <Subheading1 text="Expresiones Aritméticas" scrollId="scroll-id__expressions-arithmetic-expressions" />
 
           <RegularText>
             Si una expresión contiene exclusivamente <BoldText>operadores aritméticos</BoldText>,
@@ -337,7 +340,7 @@ export default () => {
             expresiones producen exclusivamente <BoldText>números</BoldText>.
           </RegularText>
 
-          <Subheading1 text="Expresiones Lógicas" />
+          <Subheading1 text="Expresiones Lógicas" scrollId="scroll-id__expressions-logical-expressions" />
 
           <RegularText>
             Si una expresión contiene por lo menos un <BoldText>operador relacional</BoldText>,
@@ -355,7 +358,7 @@ export default () => {
             de esta se altera el flujo de ejecución.
           </RegularText>
 
-          <Subheading1 text="Evaluación" />
+          <Subheading1 text="Evaluación" scrollId="scroll-id__expressions-evaluation" />
 
           <RegularText>
             Para evaluar una expresión, se evalúa el uso de los distintos operadores en la
