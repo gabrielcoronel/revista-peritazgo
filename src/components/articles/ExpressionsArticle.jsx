@@ -1,4 +1,3 @@
-import 'animate.css'
 import { useSectionScrolling } from '../../utilities/hooks'
 import ArticleContainer from '../ArticleContainer'
 import {
@@ -42,14 +41,10 @@ export default () => {
             Existen dos principales tipos de valores: los literales y las variables.
 
             Los <BoldText>literales</BoldText> son simplemente números o cadenas. Estos
-            se referencia simplemente por la representación textual de su valor. Por ejemplo,
+            se referencian simplemente por la representación textual de su valor. Por ejemplo,
             <CodeText>6</CodeText> para el número seis y <CodeText>"hola"</CodeText> para
-            una cadena.
-
-            Por su parte, las <BoldText>variables</BoldText> son espacios reservados en
-            memoria bajo una dirección en específico, que tienen un tipo de dato y valor
-            asignado. El valor de una variable es referenciado mediante el nombre de tal
-            variable.
+            una cadena. Por su parte, las <BoldText>variables</BoldText> son referenciadas
+            mediante su nombre.
           </RegularText>
 
           <Subheading1 text="Operadores" scrollId="scroll-id__expressions-operators" />

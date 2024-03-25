@@ -6,6 +6,7 @@ import Header from './components/Header'
 import ArticleDisplay from './components/ArticleDisplay'
 import FloatingActionButton from './components/FloatingActionButton'
 import ExpressionsArticle from './components/articles/ExpressionsArticle'
+import BasicConceptsArticle from './components/articles/BasicConceptsArticle'
 import { ContentSelectorProvider } from './context/contentSelector'
 import { FiMenu } from 'react-icons/fi'
 import { IoClose } from 'react-icons/io5'
@@ -14,6 +15,33 @@ const units = [
   {
     name: "Fundamentos de Programación",
     topics: [
+      {
+        name: "Conceptos Básicos",
+        sectionScrollId: "scroll-id__basic-concepts-title",
+        subtopics: [
+          {
+            name: "Informática",
+            sectionScrollId: "scroll-id__basic-concepts-informatics"
+          },
+          {
+            name: "Variables",
+            sectionScrollId: "scroll-id__basic-concepts-variables"
+          },
+          {
+            name: "Algoritmos",
+            sectionScrollId: "scroll-id__basic-concepts-algorithms"
+          },
+          {
+            name: "Pseudocódigo",
+            sectionScrollId: "scroll-id__basic-concepts-pseudocode"
+          },
+          {
+            name: "Diagramas de Flujo",
+            sectionScrollId: "scroll-id__basic-concepts-flowcharts"
+          },
+        ],
+        articleComponent: <BasicConceptsArticle />
+      },
       {
         name: "Expresiones",
         sectionScrollId: "scroll-id__expressions-title",
@@ -40,7 +68,7 @@ const units = [
           },
         ],
         articleComponent: <ExpressionsArticle />
-      },
+      }
     ]
   }
 ]
