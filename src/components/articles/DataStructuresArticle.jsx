@@ -7,22 +7,22 @@ import {
   BoldText
 } from '../PageTexts'
 import Link from '../Link'
-// import DataStructureClassificationDiagramFigure from '../../../public/data-structures-figures/data-structure-classification-diagram.svg'
+import DataStructureClassificationDiagramFigure from '../../../public/data-structures-figures/data-structure-classification-diagram.png'
 import { SiCodereview } from 'react-icons/si'
 
 const PseintPracticeUrl = "https://drive.google.com/file/d/1qo7tnTgENJD4GfLIV-pxIOq-QG1EHpBK/view?usp=sharing"
 
-// const DataStructureClassificationDiagram = () => {
-//   return (
-//     <div className="flex justify-center items-center w-full">
-//       <img
-//         onClick={() => window.open(DataStructureClassificationDiagramFigure)}
-//         className="object-fit w-2/3 rounded-md cursor-pointer"
-//         src={DataStructureClassificationDiagramFigure}
-//       />
-//     </div>
-//   )
-// }
+const DataStructureClassificationDiagram = () => {
+  return (
+    <div className="flex justify-center items-center w-full">
+      <img
+        onClick={() => window.open(DataStructureClassificationDiagramFigure)}
+        className="object-fit w-2/3 rounded-md cursor-pointer"
+        src={DataStructureClassificationDiagramFigure}
+      />
+    </div>
+  )
+}
 
 export default () => {
   useSectionScrolling()
@@ -39,6 +39,8 @@ export default () => {
         mecanismos que permiten la <BoldText>organización de datos</BoldText>.
         Las estructuras de datos se clasifican según el presente diagrama.
       </RegularText>
+
+      <DataStructureClassificationDiagram />
 
       <Subheading1 text="Anexos" />
 
