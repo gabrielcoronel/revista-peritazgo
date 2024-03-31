@@ -11,12 +11,18 @@ export const useContentSelector = () => {
 export const ContentSelectorProvider = ({ children }) => {
     const [articleComponent, setArticleComponent] = useState(null)
     const [sectionScrollId, setSectionScrollId] = useState(null)
+    const [selectedTopicIndex, setSelectedTopicIndex] = useState(null)
+    const [unitName, setUnitName] = useState(null)
 
     const contentSelectorValue = {
         articleComponent,
         sectionScrollId,
         setArticleComponent,
-        setSectionScrollId
+        setSectionScrollId,
+        selectedTopicIndex,
+        setSelectedTopicIndex,
+        unitName,
+        setUnitName
     }
 
     return (

@@ -135,7 +135,7 @@ const TopicsEntry = ({ topic, isSelected, onSelect }) => {
 }
 
 const TopicsMenu = ({ unit, onGoBack }) => {
-    const [selectedTopicIndex, setSelectedTopicIndex] = useState(null)
+    const { selectedTopicIndex, setSelectedTopicIndex } = useContentSelector()
 
     const topicsElements = unit.topics.map((topic, index) => {
         return (
@@ -158,7 +158,7 @@ const TopicsMenu = ({ unit, onGoBack }) => {
 }
 
 export default ({ units }) => {
-    const [currentUnitName, setCurrentUnitName] = useState(null)
+    const { unitName, setUnitName } = useContentSelector()
 
     const getUnitByName = (unitName) => {
         const filteredUnits = units.filter(({ name }) => unitName === name)
@@ -170,17 +170,17 @@ export default ({ units }) => {
     return (
         <div className="w-full h-full bg-regular_background">
             {
-                currentUnitName === null ?
+                unitName === null ?
                 (
                     <UnitsMenu
                         units={units}
-                        onSelect={setCurrentUnitName}
+                        onSelect={setUnitName}
                     />
                 ) :
                 (
                     <TopicsMenu
-                        unit={getUnitByName(currentUnitName)}
-                        onGoBack={() => setCurrentUnitName(null)}
+                        unit={getUnitByName(unitName)}
+                        onGoBack={() => setUnitName(null)}
                     />
                 )
             }
