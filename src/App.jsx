@@ -2,7 +2,6 @@ import './index.css'
 import 'animate.css'
 import { useState } from 'react'
 import Menu from './components/Menu'
-import Header from './components/Header'
 import ArticleDisplay from './components/ArticleDisplay'
 import FloatingActionButton from './components/FloatingActionButton'
 import BasicConceptsArticle from './components/articles/BasicConceptsArticle'
@@ -98,18 +97,11 @@ const Main = () => {
 
   return (
     <div className="flex flex-col w-full h-screen max-h-screen">
-      <div className="w-full">
-        <Header
-          onAction={() => setIsShowingMenu(!isShowingMenu)}
-          isActive={isShowingMenu}
-        />
-      </div>
-
       <div className="w-full h-full flex bg-regular_background">
         {
           isShowingMenu ?
           (
-            <div className="w-1/5 h-full bg-regular_background shadow-2xl animate__animated animate__slideInLeft">
+            <div className="w-1/4 h-full bg-regular_background shadow-2xl animate__animated animate__slideInLeft">
               <Menu units={units} />
             </div>
           ) :

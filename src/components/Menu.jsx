@@ -168,7 +168,13 @@ export default ({ units }) => {
     }
 
     return (
-        <div className="w-full h-full bg-regular_background">
+        <div className="flex flex-col w-full h-full bg-regular_background">
+            <div className="pt-3 pl-3">
+              <span className="text-2xl font-semibold text-accent_text">
+                  Revista Peritazgo
+              </span>
+            </div>
+
             {
                 unitName === null ?
                 (
