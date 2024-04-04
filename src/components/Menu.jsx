@@ -120,16 +120,25 @@ const TopicsEntry = ({ topic, isSelected, onSelect }) => {
     })
 
     return (
-        <div className="flex flex-col gay-y-2 bg-regular_background">
+        <div
+          key={isSelected}
+          className="flex flex-col gap-y-2 bg-regular_background animate__animated animate__fadeIn"
+        >
             <Entry
                 title={topic.name}
                 onClick={handleEntryClick}
                 isSelected={isSelected}
             />
 
-            <div className="flex flex-col pl-3 gay-y-2 bg-regular_background">
-                {subtopicsElements}
-            </div>
+            {
+              isSelected ?
+                (
+                  <div className="flex flex-col pl-3 gap-y-2 bg-regular_background">
+                    {subtopicsElements}
+                  </div>
+                ) :
+                null
+            }
         </div>
     )
 }
