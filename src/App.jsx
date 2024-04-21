@@ -28,6 +28,10 @@ const units = [
             sectionScrollId: "scroll-id__basic-concepts-variables"
           },
           {
+            name: "Punteros",
+            sectionScrollId: "scroll-id__basic-concepts-pointers"
+          },
+          {
             name: "Algoritmos",
             sectionScrollId: "scroll-id__basic-concepts-algorithms"
           },

@@ -6,6 +6,7 @@ import {
   Subheading2,
   RegularText,
   BoldText,
+  ItalicText,
   CodeText,
   Space
 } from '../PageTexts'
@@ -208,6 +209,115 @@ export default () => {
           </RegularText>
         </UnorderedList>
       </RegularText>
+
+      <Subheading1 text="Punteros" scrollId="scroll-id__basic-concepts-pointers" />
+
+      <RegularText>
+        Un <BoldText>puntero</BoldText> es una <BoldText>dirección en memoria</BoldText>.
+        Esta dirección en memoria puede ser la dirección en memoria de una
+        <Space />
+
+        <BoldText>variable</BoldText>, entonces se dice que
+
+        <Space />
+
+        <ItalicText>el puntero apunta a la variable</ItalicText>. También, esta
+        dirección en memoria puede ser <BoldText>nula</BoldText>, entonces se
+        dice que <ItalicText>el puntero no apunta a nada</ItalicText>.
+      </RegularText>
+
+      <Subheading2 text="Variables Puntero" />
+
+      <RegularText>
+        Una <BoldText>variable puntero</BoldText> a un tipo arbitrario
+        <Space />
+
+        <CodeText>T</CodeText> es una <BoldText>variable</BoldText> que almacena
+        como valor la dirección en memoria de una variabla del mismo tipo
+
+        <Space />
+
+        <CodeText>T</CodeText>. Es decir, el tipo de la variable y el tipo al
+        que la variable puntero apunta <BoldText>coinciden</BoldText>. Cabe
+        destacar que las variables puntero siguen siendo
+
+        <Space />
+
+        <BoldText>variables ordinarias</BoldText>, por ende, tienen su
+
+        <Space />
+
+        <BoldText>propia dirección en memoria</BoldText>.
+      </RegularText>
+
+      <Subheading2 text="Aritmética de Punteros" />
+
+      <RegularText>
+        La <BoldText>aritmética de punteros</BoldText> es el conjunto de operaciones
+        propias de los punteros y las variables puntero.
+      </RegularText>
+
+      <UnorderedList>
+        <RegularText>
+          <CodeText>&x</CodeText>:
+
+          <Space/>
+
+          La dirección en memoria de la variable <CodeText>x</CodeText>
+        </RegularText>
+
+        <RegularText>
+          <CodeText>*p</CodeText>:
+
+          <Space />
+
+          El valor de la variable a la que apunta la variable puntero
+
+          <Space />
+
+          <CodeText>p</CodeText>
+        </RegularText>
+
+        <RegularText>
+          <CodeText>*p = y</CodeText>:
+
+          <Space />
+
+          Se almacena el valor <CodeText>y</CodeText> en la dirección en
+          memoria que almacena la variable puntero <CodeText>p</CodeText>
+        </RegularText>
+      </UnorderedList>
+
+      <RegularText>
+        En el siguiente ejemplo, <CodeText>p</CodeText> apunta a una dirección
+        nula, luego a <CodeText>x</CodeText> y finalmente el valor de
+
+        <Space />
+
+        <CodeText>x</CodeText> cambia de <CodeText>5</CodeText> a
+
+        <Space />
+
+        <CodeText>3</CodeText>.
+      </RegularText>
+
+      <Fragment>
+        <CodeText>
+          int x ← 5
+        </CodeText>
+
+        <CodeText>
+          int *p ← NULL
+        </CodeText>
+
+        <CodeText>
+          p ← &x
+        </CodeText>
+
+        <CodeText>
+          *p ← 3
+        </CodeText>
+      </Fragment>
 
       <Subheading1 text="Algoritmos" scrollId="scroll-id__basic-concepts-algorithms" />
 
