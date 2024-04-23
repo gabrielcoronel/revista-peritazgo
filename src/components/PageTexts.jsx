@@ -28,6 +28,14 @@ export const Subheading2 = ({ text }) => {
     )
 }
 
+export const Subheading3 = ({ text }) => {
+    return (
+        <span className="text-lg font-bold text-heading_text bg-regular_background">
+            {text}
+        </span>
+    )
+}
+
 export const RegularText = ({ children }) => {
     return (
         <span className="text-lg text-regular_text bg-regular_background">

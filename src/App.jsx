@@ -7,6 +7,7 @@ import FloatingActionButton from './components/FloatingActionButton'
 import BasicConceptsArticle from './components/articles/BasicConceptsArticle'
 import ExpressionsArticle from './components/articles/ExpressionsArticle'
 import ControlFlowStatementsArticle from './components/articles/ControlFlowStatementsArticle'
+import DataStructuresArticle from './components/articles/DataStructuresArticle'
 import { ContentSelectorProvider } from './context/contentSelector'
 import { FiMenu } from 'react-icons/fi'
 import { IoClose } from 'react-icons/io5'
@@ -91,6 +92,21 @@ const units = [
           }
         ],
         articleComponent: <ControlFlowStatementsArticle />
+      },
+      {
+        name: "Estructuras de Datos",
+        sectionScrollId: "scroll-id__data-structures-title",
+        subtopics: [
+          {
+            name: "Estructuras de Datos Estáticas",
+            sectionScrollId: "scroll-id__data-structures-static"
+          },
+          {
+            name: "Estructuras de Datos Dinámicas",
+            sectionScrollId: "scroll-id__data-structures-dynamic"
+          },
+        ],
+        articleComponent: <DataStructuresArticle />
       }
     ]
   }
