@@ -1,5 +1,4 @@
 import 'animate.css'
-import { useState } from 'react'
 import { useHover } from '../utilities/hooks'
 import { useContentSelector } from '../context/contentSelector'
 import { MdArrowBackIosNew } from 'react-icons/md'
@@ -48,34 +47,6 @@ const Entry = ({ title, onClick, isSelected }) => {
     )
 }
 
-const Subentry = ({ title, onClick, isSelected }) => {
-    const [isHovering, hoveringEvents] = useHover()
-
-    return (
-        <div
-            {...hoveringEvents}
-            onClick={onClick}
-            className={
-                `bg-regular_background rounded-md`
-            }
-        >
-            <div
-                className={
-                    `flex items-start px-1 rounded-md transition-colors cursor-pointer ${isHovering || isSelected ? "bg-accent_background bg-opacity-20" : "bg-regular_background" }`
-                }
-            >
-                <span
-                    className={
-                        `text-lg font-normal transition-colors ${isHovering || isSelected ? "text-accent_text" : "text-regular_text" }`
-                    }
-                >
-                    {title}
-                </span>
-            </div>
-        </div>
-    )
-}
-
 const UnitsMenu = ({ units, onSelect }) => {
     const unitsElements = units.map(({ name }, index) => {
         return (
@@ -103,25 +74,8 @@ const TopicsEntry = ({ topic, isSelected, onSelect }) => {
       onSelect()
     }
 
-    const handleSubentryClick = (index) => {
-        setArticleComponent(topic.articleComponent)
-        setSectionScrollId(topic.subtopics[index].sectionScrollId)
-        onSelect()
-    }
-
-    const subtopicsElements = topic.subtopics.map(({ name }, index) => {
-        return (
-            <Subentry
-                key={index}
-                title={name}
-                onClick={() => handleSubentryClick(index)}
-            />
-        )
-    })
-
     return (
         <div
-          key={isSelected}
           className="flex flex-col gap-y-2 bg-regular_background animate__animated animate__fadeIn"
         >
             <Entry
@@ -129,16 +83,6 @@ const TopicsEntry = ({ topic, isSelected, onSelect }) => {
                 onClick={handleEntryClick}
                 isSelected={isSelected}
             />
-
-            {
-              isSelected ?
-                (
-                  <div className="flex flex-col pl-3 gap-y-2 bg-regular_background">
-                    {subtopicsElements}
-                  </div>
-                ) :
-                null
-            }
         </div>
     )
 }
