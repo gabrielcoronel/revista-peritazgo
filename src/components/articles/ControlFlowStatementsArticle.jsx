@@ -1,4 +1,3 @@
-import { useSectionScrolling } from '../../utilities/hooks'
 import ArticleContainer from '../ArticleContainer'
 import {
   Heading,
@@ -25,8 +24,6 @@ import { SiCodereview } from 'react-icons/si'
 const ControlFlowStatementsPracticeUrl = "https://drive.google.com/file/d/16LdLBhjuEYJVwATn--o0eYmB080yThVU/view?usp=sharing"
 
 export default () => {
-  useSectionScrolling()
-
   return (
     <ArticleContainer>
       <Heading

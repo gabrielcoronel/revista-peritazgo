@@ -1,6 +1,7 @@
 import 'animate.css'
+import { useState } from 'react'
 import { useHover } from '../utilities/hooks'
-import { useContentSelector } from '../context/contentSelector'
+import { useNavigate } from 'react-router-dom'
 import { MdArrowBackIosNew } from 'react-icons/md'
 
 const GoBackButton = ({ onGoBack }) => {
@@ -32,12 +33,12 @@ const Entry = ({ title, onClick, isSelected }) => {
         >
             <div
                 className={
-                    `flex items-start px-1 rounded-md transition-colors cursor-pointer ${isHovering || isSelected ? "bg-accent_background bg-opacity-20" : "bg-regular_background" }`
+                    `flex items-start px-1 rounded-md transition-colors cursor-pointer ${isHovering || isSelected ? "bg-accent_background bg-opacity-20" : "bg-regular_background"}`
                 }
             >
                 <span
                     className={
-                        `text-lg font-medium transition-colors ${isHovering || isSelected ? "text-accent_text" : "text-regular_text" }`
+                        `text-lg font-medium transition-colors ${isHovering || isSelected ? "text-accent_text" : "text-regular_text"}`
                     }
                 >
                     {title}
@@ -53,7 +54,7 @@ const UnitsMenu = ({ units, onSelect }) => {
             <Entry
                 key={index}
                 title={name}
-                onClick={() => onSelect(name)}
+                onClick={() => onSelect(index)}
             />
         )
     })
@@ -65,37 +66,21 @@ const UnitsMenu = ({ units, onSelect }) => {
     )
 }
 
-const TopicsEntry = ({ topic, isSelected, onSelect }) => {
-    const { setArticleComponent, setSectionScrollId } = useContentSelector()
+const TopicsMenu = ({ unit, onGoBack }) => {
+    const navigate = useNavigate()
+    const [selectedTopicIndex, setSelectedTopicIndex] = useState()
 
-    const handleEntryClick = () => {
-      setArticleComponent(topic.articleComponent)
-      setSectionScrollId(topic.sectionScrollId)
-      onSelect()
+    const handleSelectTopic = (index, route) => {
+        setSelectedTopicIndex(index)
+        navigate(route)
     }
 
-    return (
-        <div
-          className="flex flex-col gap-y-2 bg-regular_background animate__animated animate__fadeIn"
-        >
-            <Entry
-                title={topic.name}
-                onClick={handleEntryClick}
-                isSelected={isSelected}
-            />
-        </div>
-    )
-}
-
-const TopicsMenu = ({ unit, onGoBack }) => {
-    const { selectedTopicIndex, setSelectedTopicIndex } = useContentSelector()
-
-    const topicsElements = unit.topics.map((topic, index) => {
+    const topicsElements = unit.topics.map(({ name, route }, index) => {
         return (
-            <TopicsEntry
+            <Entry
                 key={index}
-                topic={topic}
-                onSelect={() => setSelectedTopicIndex(index)}
+                title={name}
+                onClick={() => handleSelectTopic(index, route)}
                 isSelected={index === selectedTopicIndex}
             />
         )
@@ -111,37 +96,30 @@ const TopicsMenu = ({ unit, onGoBack }) => {
 }
 
 export default ({ units }) => {
-    const { unitName, setUnitName } = useContentSelector()
-
-    const getUnitByName = (unitName) => {
-        const filteredUnits = units.filter(({ name }) => unitName === name)
-        const unit = filteredUnits[0]
-
-        return unit
-    }
+    const [selectedUnitIndex, setSelectedUnitIndex] = useState(null)
 
     return (
         <div className="flex flex-col w-full h-full bg-regular_background">
             <div className="pt-3 pl-3">
-              <span className="text-2xl font-semibold text-accent_text">
-                  Revista Peritazgo
-              </span>
+                <span className="text-2xl font-semibold text-accent_text">
+                    Revista Peritazgo
+                </span>
             </div>
 
             {
-                unitName === null ?
-                (
-                    <UnitsMenu
-                        units={units}
-                        onSelect={setUnitName}
-                    />
-                ) :
-                (
-                    <TopicsMenu
-                        unit={getUnitByName(unitName)}
-                        onGoBack={() => setUnitName(null)}
-                    />
-                )
+                selectedUnitIndex === null ?
+                    (
+                        <UnitsMenu
+                            units={units}
+                            onSelect={setSelectedUnitIndex}
+                        />
+                    ) :
+                    (
+                        <TopicsMenu
+                            unit={units[selectedUnitIndex]}
+                            onGoBack={() => setSelectedUnitIndex(null)}
+                        />
+                    )
             }
         </div>
     )

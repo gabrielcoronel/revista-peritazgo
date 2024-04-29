@@ -1,4 +1,3 @@
-import { useSectionScrolling } from '../../utilities/hooks'
 import ArticleContainer from '../ArticleContainer'
 import {
   Heading,
@@ -33,8 +32,6 @@ const DataStructureClassificationDiagram = () => {
 }
 
 export default () => {
-  useSectionScrolling()
-
   return (
     <ArticleContainer>
       <Heading

@@ -1,4 +1,3 @@
-import { useSectionScrolling } from '../../utilities/hooks'
 import ArticleContainer from '../ArticleContainer'
 import {
   Heading,
@@ -137,8 +136,6 @@ const FlowchartFiguresTable = () => {
 }
 
 export default () => {
-  useSectionScrolling()
-
   return (
     <ArticleContainer>
       <Heading text="Conceptos Básicos" scrollId="scroll-id__basic-concepts-title" />

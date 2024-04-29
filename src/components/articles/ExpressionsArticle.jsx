@@ -1,4 +1,3 @@
-import { useSectionScrolling } from '../../utilities/hooks'
 import ArticleContainer from '../ArticleContainer'
 import {
   Heading,
@@ -17,8 +16,6 @@ import { SiCodereview } from 'react-icons/si'
 const ExpressionsPracticeUrl = "https://drive.google.com/file/d/117ed-UnlrMOCiJnBGWOT0C4H5UYXRqlW/view?usp=sharing"
 
 export default () => {
-    useSectionScrolling()
-
     return (
         <ArticleContainer>
           <Heading text="Expresiones" scrollId="scroll-id__expressions-title" />
