@@ -8,7 +8,7 @@ export default ({ icon, onClick, top, left }) => {
         <div
             {...hoveringEvents}
             className={
-                `bg-accent_background text-regular_background text-3xl h-fit w-fit p-3 rounded-full transition-all transition-colors cursor-pointer transition ease-in-out duration-300 ${isHovering ? "-translate-y-1 scale-110" : "" }`
+                `bg-accent_background text-regular_background text-3xl h-fit w-fit p-3 rounded-full transition-all transition-colors cursor-pointer transition ease-in-out delay-300 duration-300 ${isHovering ? "scale-110" : "" }`
             }
             style={{
                 position: "fixed",

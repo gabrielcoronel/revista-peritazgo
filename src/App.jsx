@@ -8,10 +8,12 @@ import {
 import { useState } from 'react'
 import Menu from './components/Menu'
 import FloatingActionButton from './components/FloatingActionButton'
-import BasicConceptsArticle from './components/articles/BasicConceptsArticle'
-import ExpressionsArticle from './components/articles/ExpressionsArticle'
-import ControlFlowStatementsArticle from './components/articles/ControlFlowStatementsArticle'
-import DataStructuresArticle from './components/articles/DataStructuresArticle'
+import {
+  BasicConceptsArticle,
+  ExpressionsArticle,
+  ControlFlowStatementsArticle,
+  DataStructuresArticle
+} from './articles'
 import { FiMenu } from 'react-icons/fi'
 import { IoClose } from 'react-icons/io5'
 
@@ -21,75 +23,19 @@ const units = [
     topics: [
       {
         name: "Conceptos Básicos",
-        route: "programming-fundamentals/basics/",
-        subtopics: [
-          {
-            name: "Informática",
-          },
-          {
-            name: "Variables",
-          },
-          {
-            name: "Punteros",
-          },
-          {
-            name: "Algoritmos",
-          },
-          {
-            name: "Pseudocódigo",
-          },
-          {
-            name: "Diagramas de Flujo",
-          },
-        ],
+        route: "programming-fundamentals/basics/"
       },
       {
         name: "Expresiones",
-        route: "programming-fundamentals/expressions/",
-        subtopics: [
-          {
-            name: "Valores",
-          },
-          {
-            name: "Operadores",
-          },
-          {
-            name: "Expresiones Aritméticas",
-          },
-          {
-            name: "Expresiones Lógicas",
-          },
-          {
-            name: "Evaluación",
-          },
-        ],
+        route: "programming-fundamentals/expressions/"
       },
       {
         name: "Estructuras de Control",
-        route: "programming-fundamentals/control-flow/",
-        subtopics: [
-          {
-            name: "Estructuras de Control Secuenciales",
-          },
-          {
-            name: "Estructuras de Control Selectivas",
-          },
-          {
-            name: "Estructuras de Control Repetitivas",
-          }
-        ],
+        route: "programming-fundamentals/control-flow/"
       },
       {
         name: "Estructuras de Datos",
-        route: "programming-fundamentals/data-structures/",
-        subtopics: [
-          {
-            name: "Estructuras de Datos Estáticas",
-          },
-          {
-            name: "Estructuras de Datos Dinámicas",
-          },
-        ],
+        route: "programming-fundamentals/data-structures/"
       }
     ]
   }
@@ -132,19 +78,19 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "programming-fundamentals/basics/",
+        path: "programming-fundamentals/basics/*",
         element: <BasicConceptsArticle />
       },
       {
-        path: "programming-fundamentals/expressions/",
+        path: "programming-fundamentals/expressions/*",
         element: <ExpressionsArticle />
       },
       {
-        path: "programming-fundamentals/control-flow/",
+        path: "programming-fundamentals/control-flow/*",
         element: <ControlFlowStatementsArticle />
       },
       {
-        path: "programming-fundamentals/data-structures/",
+        path: "programming-fundamentals/data-structures/*",
         element: <DataStructuresArticle />
       },
     ]

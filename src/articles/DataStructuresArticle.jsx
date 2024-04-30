@@ -1,23 +1,19 @@
-import ArticleContainer from '../ArticleContainer'
+import ArticleContainer from '../components/ArticleContainer'
+import SectionContainer from '../components/SectionContainer'
+import Fragment from '../components/Fragment'
+import OrderedList from '../components/OrderedList'
+import UnorderedList from '../components/UnorderedList'
 import {
-  Heading,
-  Subheading1,
-  Subheading2,
-  Subheading3,
+  Heading1,
+  Heading2,
   RegularText,
   BoldText,
   ItalicText,
   Space,
   CodeText
-} from '../PageTexts'
-import Fragment from '../Fragment'
-import OrderedList from '../OrderedList'
-import UnorderedList from '../UnorderedList'
-import Link from '../Link'
-import DataStructureClassificationDiagramFigure from '../../../public/data-structures-figures/data-structure-classification-diagram.png'
-import { SiCodereview } from 'react-icons/si'
+} from '../components/Typography'
 
-const PseintPracticeUrl = "https://drive.google.com/file/d/1qo7tnTgENJD4GfLIV-pxIOq-QG1EHpBK/view?usp=sharing"
+import DataStructureClassificationDiagramFigure from '../../public/data-structures-figures/data-structure-classification-diagram.png'
 
 const DataStructureClassificationDiagram = () => {
   return (
@@ -31,23 +27,18 @@ const DataStructureClassificationDiagram = () => {
   )
 }
 
-export default () => {
+const ClassificationSection = () => {
+    return (
+      <SectionContainer>
+        <DataStructureClassificationDiagram />
+      </SectionContainer>
+    )
+}
+
+const StaticsSection = () => {
   return (
-    <ArticleContainer>
-      <Heading
-        text="Estructuras de Datos"
-        scrollId="scroll-id__data-structures-title"
-      />
-
-      <RegularText>
-        Las <BoldText>estructuras de datos</BoldText> son todos aquellos
-        mecanismos que permiten la <BoldText>organización de datos</BoldText>.
-        Las estructuras de datos se clasifican según el presente diagrama.
-      </RegularText>
-
-      <DataStructureClassificationDiagram />
-
-      <Subheading1
+    <SectionContainer>
+      <Heading1
         text="Estructuras de Datos Estáticas"
         scrollId="scroll-id__data-structures-static"
       />
@@ -62,7 +53,7 @@ export default () => {
         y los <BoldText>registros</BoldText>.
       </RegularText>
 
-      <Subheading2 text="Arreglos" />
+      <Heading2 text="Arreglos" />
 
       <RegularText>
         Los <BoldText>arreglos</BoldText> son estructuras de datos estáticas que
@@ -149,7 +140,7 @@ export default () => {
         </RegularText>
       </OrderedList>
 
-      <Subheading2 text="Registros" />
+      <Heading2 text="Registros" />
 
       <RegularText>
         Los <BoldText>registros</BoldText> son estructuras de datos estáticas
@@ -196,8 +187,14 @@ export default () => {
           <CodeText>edad</CodeText>
         </RegularText>
       </OrderedList>
+    </SectionContainer>
+  )
+}
 
-      <Subheading1
+const DynamicsSection = () => {
+  return (
+    <SectionContainer>
+      <Heading1
         text="Estructuras de Datos Dinámicas"
         scrollId="scroll-id__data-structures-dynamic"
       />
@@ -214,7 +211,7 @@ export default () => {
         dinámicas: <BoldText>el nodo</BoldText>
       </RegularText>
 
-      <Subheading2 text="Nodos" />
+      <Heading2 text="Nodos" />
 
       <RegularText>
         Un <BoldText>nodo</BoldText> es un <BoldText>registro</BoldText> que
@@ -231,7 +228,7 @@ export default () => {
         </RegularText>
       </UnorderedList>
 
-      <Subheading2 text="Estructuras de Datos Dinámicas Lineales" />
+      <Heading2 text="Estructuras de Datos Dinámicas Lineales" />
 
       <RegularText>
         Las <BoldText>estructuras de datos dinámicas lineales</BoldText> son
@@ -243,7 +240,7 @@ export default () => {
         <BoldText>recorrer todos los elementos anteriores a este</BoldText>.
       </RegularText>
 
-      <Subheading3 text="Listas Enlazadas" />
+      <Heading2 text="Listas Enlazadas" />
 
       <RegularText>
         Las <BoldText>listas enlazadas</BoldText> (también conocidas como
@@ -272,7 +269,7 @@ export default () => {
         último nodo de la lista.
       </RegularText>
 
-      <Subheading2 text="Estructuras de Datos Dinámicas No Lineales" />
+      <Heading2 text="Estructuras de Datos Dinámicas No Lineales" />
 
       <RegularText>
         Las <BoldText>estructuras de datos dinámicas no lineales</BoldText> son
@@ -281,7 +278,7 @@ export default () => {
         estructura.
       </RegularText>
 
-      <Subheading3 text="Árboles" />
+      <Heading2 text="Árboles" />
 
       <RegularText>
         Los <BoldText>árboles</BoldText> son estructuras de datos dinámicas no
@@ -316,7 +313,7 @@ export default () => {
         </RegularText>
       </UnorderedList>
 
-      <Subheading3 text="Grafos" />
+      <Heading2 text="Grafos" />
 
       <RegularText>
         Los <BoldText>grafos</BoldText> son estructuras de datos dinámicas no
@@ -325,20 +322,41 @@ export default () => {
         de un grafo pueden tener una cantidad arbitraria de hijos, a diferencia de
         los árboles.
       </RegularText>
-
-      <Subheading1 text="Anexos" />
-
-      <Link
-        icon={<SiCodereview />}
-        title="Ejercicio en PSeint de Arreglos y Estructuras de Control"
-        onClick={() => window.open(PseintPracticeUrl)}
-      />
-
-      <Link
-        icon={<SiCodereview />}
-        title="Práctica #3: Estructuras de Datos"
-        onClick={() => window.open()}
-      />
-    </ArticleContainer>
+    </SectionContainer>
   )
+}
+
+const routingConfiguration = {
+  defaultRoute: "classification/",
+  routes: [
+      {
+          title: "Clasificación",
+          route: "classification/",
+          component: <ClassificationSection />
+      },
+      {
+          title: "Estáticas",
+          route: "static/",
+          component: <StaticsSection />
+      },
+      {
+          title: "Dinámicas",
+          route: "dynamic/",
+          component: <DynamicsSection />
+      },
+  ]
+}
+
+export default () => {
+    return (
+        <ArticleContainer
+            title="Estructuras de Datos"
+            routingConfiguration={routingConfiguration}
+        >
+            <RegularText>
+                Las <BoldText>estructuras de datos</BoldText> son todos aquellos
+                mecanismos que permiten la <BoldText>organización de datos</BoldText>.
+            </RegularText>
+        </ArticleContainer>
+    )
 }

@@ -1,5 +1,5 @@
 import { TbCircleDot } from 'react-icons/tb'
-import { RegularText } from './PageTexts'
+import { RegularText } from './Typography'
 import { Children } from 'react'
 
 const Item = ({ children }) => {

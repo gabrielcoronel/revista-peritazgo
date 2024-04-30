@@ -1,32 +1,27 @@
-import ArticleContainer from '../ArticleContainer'
+import ArticleContainer from '../components/ArticleContainer'
+import SectionContainer from '../components/SectionContainer'
+import UnorderedList from '../components/UnorderedList'
+import Fragment from '../components/Fragment'
 import {
-  Heading,
-  Subheading1,
-  Subheading2,
+  Heading1,
   RegularText,
   BoldText,
   ItalicText,
   CodeText,
   Space
-} from '../PageTexts'
-import Link from '../Link'
-import UnorderedList from '../UnorderedList'
-import Fragment from '../Fragment'
-import StartEndFigure from '../../../public/flowchart-figures/start-end.png'
-import ProcessFigure from '../../../public/flowchart-figures/process.png'
-import ConditionalFigure from '../../../public/flowchart-figures/conditional.png'
-import CycleFigure from '../../../public/flowchart-figures/cycle.png'
-import DataInputFigure from '../../../public/flowchart-figures/data-input.png'
-import ScreenDisplayFigure from '../../../public/flowchart-figures/screen-display.png'
-import OnPageConnectorFigure from '../../../public/flowchart-figures/on-page-connector.png'
-import OffPageConnectorFigure from '../../../public/flowchart-figures/off-page-connector.png'
-import KeyboardInputFigure from '../../../public/flowchart-figures/keyboard-input.png'
-import DatabaseFigure from '../../../public/flowchart-figures/database.png'
-import CloudFigure from '../../../public/flowchart-figures/cloud.png'
-import { FaBookOpen } from 'react-icons/fa'
+} from '../components/Typography'
 
-const InformaticsReferenceText = "Cañedo R., Ramos R. E., Guerrero J. C. (2005). La Informática, la Computación y la Ciencia de la Información: una alianza para el desarrollo. Acimed, 13(5)."
-const InformaticsReferenceUrl = "http://scielo.sld.cu/scielo.php?pid=s1024-94352005000500007&script=sci_arttext"
+import StartEndFigure from '../../public/flowchart-figures/start-end.png'
+import ProcessFigure from '../../public/flowchart-figures/process.png'
+import ConditionalFigure from '../../public/flowchart-figures/conditional.png'
+import CycleFigure from '../../public/flowchart-figures/cycle.png'
+import DataInputFigure from '../../public/flowchart-figures/data-input.png'
+import ScreenDisplayFigure from '../../public/flowchart-figures/screen-display.png'
+import OnPageConnectorFigure from '../../public/flowchart-figures/on-page-connector.png'
+import OffPageConnectorFigure from '../../public/flowchart-figures/off-page-connector.png'
+import KeyboardInputFigure from '../../public/flowchart-figures/keyboard-input.png'
+import DatabaseFigure from '../../public/flowchart-figures/database.png'
+import CloudFigure from '../../public/flowchart-figures/cloud.png'
 
 const FlowchartFiguresTable = () => {
   const rows = [
@@ -135,17 +130,10 @@ const FlowchartFiguresTable = () => {
   )
 }
 
-export default () => {
+const InformaticsSection = () => {
   return (
-    <ArticleContainer>
-      <Heading text="Conceptos Básicos" scrollId="scroll-id__basic-concepts-title" />
-
-      <RegularText>
-        La presente sección explica algunos conceptos básicos necesarios para
-        entender los fundamentos de la programación.
-      </RegularText>
-
-      <Subheading1 text="Informática" scrollId="scroll-id__basic-concepts-informatics" />
+    <SectionContainer>
+      <Heading1 text="Informática" />
 
       <RegularText>
         La <BoldText>informática</BoldText> es la disciplina que se encarga de
@@ -153,8 +141,14 @@ export default () => {
         organización y almacenamiento de la información de sistemas naturales
         (Cañedo, Ramos y Guerrero, 2005).
       </RegularText>
+    </SectionContainer>
+  )
+}
 
-      <Subheading1 text="Variables" scrollId="scroll-id__basic-concepts-variables" />
+const VariablesSection = () => {
+  return (
+    <SectionContainer>
+      <Heading1 text="Variables" />
 
       <RegularText>
         Una <BoldText>variable</BoldText> es un espacio reservado en memoria que
@@ -182,7 +176,7 @@ export default () => {
         En ambos casos, la variable <CodeText>A</CodeText> tiene como valor <CodeText>0</CodeText>.
       </RegularText>
 
-      <Subheading2 text="Nombramiento de Variables" />
+      <Heading1 text="Nombramiento de Variables" />
 
       <RegularText>
         El nombre de una variable puede ser cualquier secuencia de letras y números,
@@ -206,8 +200,14 @@ export default () => {
           </RegularText>
         </UnorderedList>
       </RegularText>
+    </SectionContainer>
+  )
+}
 
-      <Subheading1 text="Punteros" scrollId="scroll-id__basic-concepts-pointers" />
+const PointersSection = () => {
+  return (
+    <SectionContainer>
+      <Heading1 text="Punteros" />
 
       <RegularText>
         Un <BoldText>puntero</BoldText> es una <BoldText>dirección en memoria</BoldText>.
@@ -223,7 +223,7 @@ export default () => {
         dice que <ItalicText>el puntero no apunta a nada</ItalicText>.
       </RegularText>
 
-      <Subheading2 text="Variables Puntero" />
+      <Heading1 text="Variables Puntero" />
 
       <RegularText>
         Una <BoldText>variable puntero</BoldText> a un tipo arbitrario
@@ -247,7 +247,7 @@ export default () => {
         <BoldText>propia dirección en memoria</BoldText>.
       </RegularText>
 
-      <Subheading2 text="Aritmética de Punteros" />
+      <Heading1 text="Aritmética de Punteros" />
 
       <RegularText>
         La <BoldText>aritmética de punteros</BoldText> es el conjunto de operaciones
@@ -315,15 +315,21 @@ export default () => {
           *p ← 3
         </CodeText>
       </Fragment>
+    </SectionContainer>
+  )
+}
 
-      <Subheading1 text="Algoritmos" scrollId="scroll-id__basic-concepts-algorithms" />
+const AlgorithmsSection = () => {
+  return (
+    <SectionContainer>
+      <Heading1 text="Algoritmos" />
 
       <RegularText>
         Un <BoldText>algoritmo</BoldText> es una secuencia de acciones lógicas
         necesarias para realizar una tarea en específico.
       </RegularText>
 
-      <Subheading2 text="Características de los Algoritmos" />
+      <Heading1 text="Características de los Algoritmos" />
 
       <RegularText>
         Todo algoritmo cumple las siguientes características.
@@ -361,7 +367,7 @@ export default () => {
         </UnorderedList>
       </RegularText>
 
-      <Subheading1 text="Pseudocódigo" scrollId="scroll-id__basic-concepts-pseudocode" />
+      <Heading1 text="Pseudocódigo" />
 
       <RegularText>
         Un <BoldText>pseudocódigo</BoldText> es una descripción <BoldText>en lenguaje humano</BoldText>
@@ -407,7 +413,7 @@ export default () => {
         </CodeText>
       </Fragment>
 
-      <Subheading1 text="Diagramas de Flujo" scrollId="scroll-id__basic-concepts-flowcharts" />
+      <Heading1 text="Diagramas de Flujo" />
 
       <RegularText>
         Un <BoldText>diagrama de flujo</BoldText> es una <BoldText>representación gráfica</BoldText>
@@ -419,14 +425,46 @@ export default () => {
       </RegularText>
 
       <FlowchartFiguresTable />
+    </SectionContainer>
+  )
+}
 
-      <Subheading1 text="Anexos" />
+const routingConfiguration = {
+  defaultRoute: "informatics/",
+  routes: [
+    {
+      title: "Informática",
+      route: "informatics/",
+      component: <InformaticsSection />
+    },
+    {
+      title: "Variables",
+      route: "variables/",
+      component: <VariablesSection />
+    },
+    {
+      title: "Punteros",
+      route: "pointers/",
+      component: <PointersSection />
+    },
+    {
+      title: "Algoritmos, pseudocódigo y diagramas de flujo",
+      route: "algorithms-pseudocode-flowcharts/",
+      component: <AlgorithmsSection />
+    },
+  ]
+}
 
-      <Link
-        icon={<FaBookOpen />}
-        title={InformaticsReferenceText}
-        onClick={() => window.open(InformaticsReferenceUrl)}
-      />
+export default () => {
+  return (
+    <ArticleContainer
+      title="Conceptos Básicos"
+      routingConfiguration={routingConfiguration}
+    >
+      <RegularText>
+        El presente artículo explica algunos conceptos básicos necesarios para
+        entender los fundamentos de la programación.
+      </RegularText>
     </ArticleContainer>
   )
 }

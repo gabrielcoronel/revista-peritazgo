@@ -1,48 +1,30 @@
-import ArticleContainer from '../ArticleContainer'
+import ArticleContainer from '../components/ArticleContainer'
+import SectionContainer from '../components/SectionContainer'
+import Fragment from '../components/Fragment'
+import OrderedList from '../components/OrderedList'
+import Figure from '../components/Figure'
 import {
-  Heading,
-  Subheading1,
-  Subheading2,
+  Heading1,
+  Heading2,
   RegularText,
   BoldText,
   CodeText,
   Space
-} from '../PageTexts'
-import Link from '../Link'
-import Fragment from '../Fragment'
-import OrderedList from '../OrderedList'
-import Figure from '../Figure'
-import SimpleConditionalFigure from '../../../public/control-flow-statements-figures/simple-conditional.svg'
-import DoubleConditionalFigure from '../../../public/control-flow-statements-figures/double-conditional.svg'
-import MultipleConditionalFigure from '../../../public/control-flow-statements-figures/multiple-conditional.svg'
-import NestedConditionalFigure from '../../../public/control-flow-statements-figures/nested-conditional.svg'
-import ForCycleFigure from '../../../public/control-flow-statements-figures/for-cycle.svg'
-import WhileCycleFigure from '../../../public/control-flow-statements-figures/while-cycle.svg'
-import DoWhileCycleFigure from '../../../public/control-flow-statements-figures/do-while-cycle.svg'
-import { SiCodereview } from 'react-icons/si'
+} from '../components/Typography'
 
-const ControlFlowStatementsPracticeUrl = "https://drive.google.com/file/d/16LdLBhjuEYJVwATn--o0eYmB080yThVU/view?usp=sharing"
+import SimpleConditionalFigure from '../../public/control-flow-statements-figures/simple-conditional.svg'
+import DoubleConditionalFigure from '../../public/control-flow-statements-figures/double-conditional.svg'
+import MultipleConditionalFigure from '../../public/control-flow-statements-figures/multiple-conditional.svg'
+import NestedConditionalFigure from '../../public/control-flow-statements-figures/nested-conditional.svg'
+import ForCycleFigure from '../../public/control-flow-statements-figures/for-cycle.svg'
+import WhileCycleFigure from '../../public/control-flow-statements-figures/while-cycle.svg'
+import DoWhileCycleFigure from '../../public/control-flow-statements-figures/do-while-cycle.svg'
 
-export default () => {
+const SequentialsSection = () => {
   return (
-    <ArticleContainer>
-      <Heading
-        text="Estructuras de Control"
-        scrollId="scroll-id__control-flow-statements-title"
-      />
-
-      <RegularText>
-        Las <BoldText>estructuras de control</BoldText> definen el
-
-        <Space />
-
-        <BoldText>flujo de ejecución</BoldText> de un algoritmo. Existen tres
-        tipos de estructuras de control: secuenciales, selectivas y repetitivas.
-      </RegularText>
-
-      <Subheading1
+    <SectionContainer>
+      <Heading1
         text="Estructuras de Control Secuenciales"
-        scrollId="scroll-id__control-flow-statements-sequential"
       />
 
       <RegularText>
@@ -71,10 +53,15 @@ export default () => {
           5. Mostrar DOBLE
         </CodeText>
       </Fragment>
+    </SectionContainer>
+  )
+}
 
-      <Subheading1
+const ConditionalsSection = () => {
+  return (
+    <SectionContainer>
+      <Heading1
         text="Estructuras de Control Selectivas"
-        scrollId="scroll-id__control-flow-statements-choice"
       />
 
       <RegularText>
@@ -89,7 +76,7 @@ export default () => {
         anidados.
       </RegularText>
 
-      <Subheading2 text="Condicionales Simples" />
+      <Heading2 text="Condicionales Simples" />
 
       <RegularText>
         Los <BoldText>condicionales simples</BoldText> ejecutan una estructura
@@ -102,7 +89,7 @@ export default () => {
         caption="Un condicional simple"
       />
 
-      <Subheading2 text="Condicionales Dobles" />
+      <Heading2 text="Condicionales Dobles" />
 
       <RegularText>
         Los <BoldText>condicionales dobles</BoldText> ejecutan una estructura
@@ -115,7 +102,7 @@ export default () => {
         caption="Un condicional doble"
       />
 
-      <Subheading2 text="Condicionales Múltiples" />
+      <Heading2 text="Condicionales Múltiples" />
 
       <RegularText>
         Los <BoldText>condicionales múltiples</BoldText> asocian en orden cada
@@ -130,7 +117,7 @@ export default () => {
         caption="Un condicional múltiple"
       />
 
-      <Subheading2 text="Condicionales Anidados" />
+      <Heading2 text="Condicionales Anidados" />
 
       <RegularText>
         Los <BoldText>condicionales anidados</BoldText> son estructuras de
@@ -142,10 +129,15 @@ export default () => {
         image={NestedConditionalFigure}
         caption="Un condicional anidado"
       />
+    </SectionContainer>
+  )
+}
 
-      <Subheading1
+const CyclesSection = () => {
+  return (
+    <SectionContainer>
+      <Heading1
         text="Estructuras de Control Repetitivas"
-        scrollId="scroll-id__control-flow-statements-looping"
       />
 
       <RegularText>
@@ -159,7 +151,7 @@ export default () => {
         y los ciclos hacer-mientras.
       </RegularText>
 
-      <Subheading2 text="Elementos de los Ciclos" />
+      <Heading2 text="Elementos de los Ciclos" />
 
       <RegularText>
         Toda estructura de control repetitiva involucra tres elementos.
@@ -182,7 +174,7 @@ export default () => {
         </RegularText>
       </OrderedList>
 
-      <Subheading2 text="Ciclos Para" />
+      <Heading2 text="Ciclos Para" />
 
       <RegularText>
         Los <BoldText>ciclos para</BoldText> son estructuras de control repetitivas
@@ -196,7 +188,7 @@ export default () => {
         caption="Un ciclo para"
       />
 
-      <Subheading2 text="Ciclos Mientras" />
+      <Heading2 text="Ciclos Mientras" />
 
       <RegularText>
         Los <BoldText>ciclos mientras</BoldText> son estructuras de control
@@ -210,7 +202,7 @@ export default () => {
         caption="Un ciclo mientras"
       />
 
-      <Subheading2 text="Ciclos Hacer-Mientras" />
+      <Heading2 text="Ciclos Hacer-Mientras" />
 
       <RegularText>
         Los <BoldText>ciclos hacer-mientras</BoldText> son estructuras de control
@@ -225,14 +217,45 @@ export default () => {
         image={DoWhileCycleFigure}
         caption="Un ciclo hacer-mientras"
       />
+    </SectionContainer>
+  )
+}
 
-      <Subheading1 text="Anexos" />
+const routingConfiguration = {
+  defaultRoute: "sequentials/",
+  routes: [
+    {
+      title: "Secuenciales",
+      route: "sequentials/",
+      component: <SequentialsSection />
+    },
+    {
+      title: "Conditionals",
+      route: "conditionals/",
+      component: <ConditionalsSection />
+    },
+    {
+      title: "Cycles",
+      route: "cycles/",
+      component: <CyclesSection />
+    },
+  ]
+}
 
-      <Link
-        icon={<SiCodereview />}
-        title="Práctica #2: Control de Flujo"
-        onClick={() => window.open(ControlFlowStatementsPracticeUrl)}
-      />
+export default () => {
+  return (
+    <ArticleContainer
+      title="Estructuras de Control"
+      routingConfiguration={routingConfiguration}
+    >
+      <RegularText>
+        Las <BoldText>estructuras de control</BoldText> definen el
+
+        <Space />
+
+        <BoldText>flujo de ejecución</BoldText> de un algoritmo. Existen tres
+        tipos de estructuras de control: secuenciales, selectivas y repetitivas.
+      </RegularText>
     </ArticleContainer>
   )
 }

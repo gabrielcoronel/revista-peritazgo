@@ -11,6 +11,7 @@ export default {
         "heading_text": "#fafafa",
         "accent_text": "#facc15",
         "regular_background": "#262626",
+        "auxiliary_background": "#3b3b3b",
         "fragment_background": "#525252",
         "accent_background": "#facc15"
       }
