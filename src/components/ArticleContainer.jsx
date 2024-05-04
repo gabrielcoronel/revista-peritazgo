@@ -15,6 +15,13 @@ const useUrlPostfix = () => {
   return postfix
 }
 
+const doesUrlPostfixMatchAnyRoute = (urlPostfix, routingConfiguration) => {
+  const availableRoutes = routingConfiguration.routes.map(({ route }) => route)
+  const needsToRedirect = availableRoutes.includes(urlPostfix)
+
+  return needsToRedirect
+}
+
 const Heading = ({ text }) => {
     return (
         <span
@@ -52,8 +59,10 @@ const Tabulator = ({ routingConfiguration }) => {
   const urlPostfix = useUrlPostfix()
 
   useEffect(() => {
-    navigate(routingConfiguration.defaultRoute)
-  }, [])
+    if (!doesUrlPostfixMatchAnyRoute(urlPostfix, routingConfiguration)) {
+      navigate(routingConfiguration.defaultRoute)
+    }
+  }, [urlPostfix])
 
   const tabulatorTiles = routingConfiguration
     .routes
