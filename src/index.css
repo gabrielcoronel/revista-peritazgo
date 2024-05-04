@@ -6,3 +6,25 @@ html, body {
     /* regular_background según la configuración de tailwindCSS */
     background-color: #262626;
 }
+
+/* Estilo de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    /* regular_background según la configuración de tailwindCSS */
+    background-color: #262626;
+}
+
+::-webkit-scrollbar-thumb {
+    /* accent_background según la configuración de tailwindCSS */
+    background: #facc15;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    /* accent_background según la configuración de tailwindCSS */
+    /* se añade un poco de opacidad */
+    background: #facc15c0;
+}
