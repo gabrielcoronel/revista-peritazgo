@@ -66,7 +66,7 @@ const Root = () => {
         icon={isShowingMenu ? <IoClose /> : <FiMenu />}
         onClick={() => setIsShowingMenu(!isShowingMenu)}
         top="85dvh"
-        left="92.5%"
+        left="95%"
       />
     </div>
   )

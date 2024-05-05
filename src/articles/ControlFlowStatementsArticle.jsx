@@ -11,6 +11,7 @@ import {
   CodeText,
   Space
 } from '../components/Typography'
+import { IoExtensionPuzzleSharp } from 'react-icons/io5'
 
 import SimpleConditionalFigure from '../../public/control-flow-statements-figures/simple-conditional.svg'
 import DoubleConditionalFigure from '../../public/control-flow-statements-figures/double-conditional.svg'
@@ -221,6 +222,14 @@ const CyclesSection = () => {
   )
 }
 
+const attachments = [
+  {
+    icon: <IoExtensionPuzzleSharp />,
+    title: "Práctica #2: Pseudocódigo y Diagramas de Flujo",
+    link: "https://drive.google.com/file/d/16LdLBhjuEYJVwATn--o0eYmB080yThVU/view?usp=sharing"
+  }
+]
+
 const routingConfiguration = {
   defaultRoute: "sequentials/",
   routes: [
@@ -247,6 +256,7 @@ export default () => {
     <ArticleContainer
       title="Estructuras de Control"
       routingConfiguration={routingConfiguration}
+      attachments={attachments}
     >
       <RegularText>
         Las <BoldText>estructuras de control</BoldText> definen el

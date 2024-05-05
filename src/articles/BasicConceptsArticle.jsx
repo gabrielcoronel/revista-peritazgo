@@ -10,6 +10,7 @@ import {
   CodeText,
   Space
 } from '../components/Typography'
+import { BsFillBookmarkFill } from 'react-icons/bs'
 
 import StartEndFigure from '../../public/flowchart-figures/start-end.png'
 import ProcessFigure from '../../public/flowchart-figures/process.png'
@@ -429,6 +430,14 @@ const AlgorithmsSection = () => {
   )
 }
 
+const attachments = [
+  {
+    icon: <BsFillBookmarkFill />,
+    title: "Cañedo R., Ramos R. E., Guerrero J. C. (2005). La Informática, la Computación y la Ciencia de la Información: una alianza para el desarrollo. Acimed, 13(5).",
+    link: "http://scielo.sld.cu/scielo.php?pid=s1024-94352005000500007&script=sci_arttext"
+  }
+]
+
 const routingConfiguration = {
   defaultRoute: "informatics/",
   routes: [
@@ -460,6 +469,7 @@ export default () => {
     <ArticleContainer
       title="Conceptos Básicos"
       routingConfiguration={routingConfiguration}
+      attachments={attachments}
     >
       <RegularText>
         El presente artículo explica algunos conceptos básicos necesarios para

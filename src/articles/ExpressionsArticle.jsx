@@ -10,6 +10,7 @@ import {
   CodeText,
   Space
 } from '../components/Typography'
+import { IoExtensionPuzzleSharp } from 'react-icons/io5'
 
 const ValuesSection = () => {
   return (
@@ -411,6 +412,14 @@ const EvaluationSection = () => {
   )
 }
 
+const attachments = [
+  {
+    icon: <IoExtensionPuzzleSharp />,
+    title: "Práctica #1: Expresiones",
+    link: "https://drive.google.com/file/d/117ed-UnlrMOCiJnBGWOT0C4H5UYXRqlW/view?usp=sharing"
+  }
+]
+
 const routingConfiguration = {
   defaultRoute: "values/",
   routes: [
@@ -442,6 +451,7 @@ export default () => {
     <ArticleContainer
       title="Expresiones"
       routingConfiguration={routingConfiguration}
+      attachments={attachments}
     >
       <RegularText>
         Las expresiones son combinaciones de <BoldText>valores</BoldText>

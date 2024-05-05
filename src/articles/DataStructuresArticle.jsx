@@ -12,6 +12,7 @@ import {
   Space,
   CodeText
 } from '../components/Typography'
+import { IoExtensionPuzzleSharp } from 'react-icons/io5'
 
 import DataStructureClassificationDiagramFigure from '../../public/data-structures-figures/data-structure-classification-diagram.png'
 
@@ -326,6 +327,14 @@ const DynamicsSection = () => {
   )
 }
 
+const attachments = [
+  {
+    icon: <IoExtensionPuzzleSharp />,
+    title: "Ejercicio de PSeint: Estructuras de control, vectores y matrices",
+    link: "https://drive.google.com/file/d/1qo7tnTgENJD4GfLIV-pxIOq-QG1EHpBK/view?usp=sharing"
+  }
+]
+
 const routingConfiguration = {
   defaultRoute: "classification/",
   routes: [
@@ -352,6 +361,7 @@ export default () => {
         <ArticleContainer
             title="Estructuras de Datos"
             routingConfiguration={routingConfiguration}
+            attachments={attachments}
         >
             <RegularText>
                 Las <BoldText>estructuras de datos</BoldText> son todos aquellos
