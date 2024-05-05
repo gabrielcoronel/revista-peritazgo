@@ -56,9 +56,10 @@ const Attachment = ({ icon, title, link }) => {
 }
 
 export default ({ attachments, isOpened, onClose }) => {
-  const attachmentsElements = attachments.map(({ icon, title, link }) => {
+  const attachmentsElements = attachments.map(({ icon, title, link }, index) => {
     return (
       <Attachment
+        key={index}
         icon={icon}
         title={title}
         link={link}

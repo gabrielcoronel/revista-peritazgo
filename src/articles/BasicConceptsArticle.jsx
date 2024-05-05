@@ -2,6 +2,7 @@ import ArticleContainer from '../components/ArticleContainer'
 import SectionContainer from '../components/SectionContainer'
 import UnorderedList from '../components/UnorderedList'
 import Fragment from '../components/Fragment'
+import FigureCarousel from '../components/FigureCarousel'
 import {
   Heading1,
   RegularText,
@@ -24,110 +25,58 @@ import KeyboardInputFigure from '../../public/flowchart-figures/keyboard-input.p
 import DatabaseFigure from '../../public/flowchart-figures/database.png'
 import CloudFigure from '../../public/flowchart-figures/cloud.png'
 
-const FlowchartFiguresTable = () => {
-  const rows = [
+const FlowchartFiguresCarousel = () => {
+  const figures = [
     {
-      figure: StartEndFigure,
-      description: "Inicio o fin"
+      image: StartEndFigure,
+      caption: "Inicio o fin"
     },
     {
-      figure: ProcessFigure,
-      description: "Proceso"
+      image: ProcessFigure,
+      caption: "Proceso"
     },
     {
-      figure: ConditionalFigure,
-      description: "Condicional"
+      image: ConditionalFigure,
+      caption: "Condicional"
     },
     {
-      figure: CycleFigure,
-      description: "Ciclo"
+      image: CycleFigure,
+      caption: "Ciclo"
     },
     {
-      figure: DataInputFigure,
-      description: "Entrada de datos"
+      image: DataInputFigure,
+      caption: "Entrada de datos"
     },
     {
-      figure: ScreenDisplayFigure,
-      description: "Impresión por pantalla"
+      image: ScreenDisplayFigure,
+      caption: "Impresión por pantalla"
     },
     {
-      figure: OnPageConnectorFigure,
-      description: "Conector en misma página"
+      image: OnPageConnectorFigure,
+      caption: "Conector en misma página"
     },
     {
-      figure: OffPageConnectorFigure,
-      description: "Conector a otra página"
+      image: OffPageConnectorFigure,
+      caption: "Conector a otra página"
     },
     {
-      figure: KeyboardInputFigure,
-      description: "Entrada por teclado"
+      image: KeyboardInputFigure,
+      caption: "Entrada por teclado"
     },
     {
-      figure: DatabaseFigure,
-      description: "Base de datos"
+      image: DatabaseFigure,
+      caption: "Base de datos"
     },
     {
-      figure: CloudFigure,
-      description: "Nube"
+      image: CloudFigure,
+      caption: "Nube"
     }
   ]
 
-  const tableElements = rows
-    .map((row) => [row.figure, row.description])
-    .flat()
-    .map((item, index) => {
-      if (index % 2 == 0) {
-        return (
-          <div
-            key={index}
-            className={
-              `flex justify-center items-center p-5 border border-regular_text ${index === rows.length * 2 - 2 ? "rounded-bl-md" : "" }`
-            }
-          >
-            <img
-              className="w-32 object-contain h-full w-full rounded-md"
-              src={item}
-            />
-          </div>
-        )
-      } else {
-        return (
-          <div
-            key={index}
-            className={
-              `flex justify-center items-center p-5 border border-regular_text ${index === rows.length * 2 - 1 ? "rounded-br-md" : "" }`
-            }
-          >
-            <span className="text-lg text-center text-regular_text bg-regular_background">
-              {item}
-            </span>
-          </div>
-        )
-      }
-    })
-
   return (
-    <div className="w-full flex justify-center items-center">
-      <div className="w-1/3">
-        <div className="grid grid-cols-2">
-          <div className="flex justify-center items-center border border-regular_text rounded-tl-md">
-            <RegularText>
-                Figura
-            </RegularText>
-          </div>
-
-          <div className="flex justify-center items-center border border-regular_text rounded-tr-md">
-            <RegularText>
-                Uso
-            </RegularText>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2">
-          {tableElements}
-        </div>
-      </div>
-    </div>
+    <FigureCarousel
+      figures={figures}
+    />
   )
 }
 
@@ -425,7 +374,7 @@ const AlgorithmsSection = () => {
         estandarizado de figuras.
       </RegularText>
 
-      <FlowchartFiguresTable />
+      <FlowchartFiguresCarousel />
     </SectionContainer>
   )
 }
