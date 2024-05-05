@@ -5,7 +5,6 @@ import OrderedList from '../../components/OrderedList'
 import Figure from '../../components/Figure'
 import {
   Heading1,
-  Heading2,
   RegularText,
   BoldText,
   CodeText,
@@ -77,7 +76,7 @@ const ConditionalsSection = () => {
         anidados.
       </RegularText>
 
-      <Heading2 text="Condicionales Simples" />
+      <Heading1 text="Condicionales Simples" />
 
       <RegularText>
         Los <BoldText>condicionales simples</BoldText> ejecutan una estructura
@@ -90,7 +89,7 @@ const ConditionalsSection = () => {
         caption="Un condicional simple"
       />
 
-      <Heading2 text="Condicionales Dobles" />
+      <Heading1 text="Condicionales Dobles" />
 
       <RegularText>
         Los <BoldText>condicionales dobles</BoldText> ejecutan una estructura
@@ -103,7 +102,7 @@ const ConditionalsSection = () => {
         caption="Un condicional doble"
       />
 
-      <Heading2 text="Condicionales Múltiples" />
+      <Heading1 text="Condicionales Múltiples" />
 
       <RegularText>
         Los <BoldText>condicionales múltiples</BoldText> asocian en orden cada
@@ -118,7 +117,7 @@ const ConditionalsSection = () => {
         caption="Un condicional múltiple"
       />
 
-      <Heading2 text="Condicionales Anidados" />
+      <Heading1 text="Condicionales Anidados" />
 
       <RegularText>
         Los <BoldText>condicionales anidados</BoldText> son estructuras de
@@ -152,7 +151,7 @@ const CyclesSection = () => {
         y los ciclos hacer-mientras.
       </RegularText>
 
-      <Heading2 text="Elementos de los Ciclos" />
+      <Heading1 text="Elementos de los Ciclos" />
 
       <RegularText>
         Toda estructura de control repetitiva involucra tres elementos.
@@ -175,7 +174,7 @@ const CyclesSection = () => {
         </RegularText>
       </OrderedList>
 
-      <Heading2 text="Ciclos Para" />
+      <Heading1 text="Ciclos Para" />
 
       <RegularText>
         Los <BoldText>ciclos para</BoldText> son estructuras de control repetitivas
@@ -189,7 +188,7 @@ const CyclesSection = () => {
         caption="Un ciclo para"
       />
 
-      <Heading2 text="Ciclos Mientras" />
+      <Heading1 text="Ciclos Mientras" />
 
       <RegularText>
         Los <BoldText>ciclos mientras</BoldText> son estructuras de control
@@ -203,7 +202,7 @@ const CyclesSection = () => {
         caption="Un ciclo mientras"
       />
 
-      <Heading2 text="Ciclos Hacer-Mientras" />
+      <Heading1 text="Ciclos Hacer-Mientras" />
 
       <RegularText>
         Los <BoldText>ciclos hacer-mientras</BoldText> son estructuras de control
@@ -239,12 +238,12 @@ const routingConfiguration = {
       component: <SequentialsSection />
     },
     {
-      title: "Conditionals",
+      title: "Condicionales",
       route: "conditionals/",
       component: <ConditionalsSection />
     },
     {
-      title: "Cycles",
+      title: "Repetitivas",
       route: "cycles/",
       component: <CyclesSection />
     },

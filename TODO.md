@@ -7,6 +7,5 @@
     - [ ] Datos e Información
     - [ ] Paradigma
     - [ ] Subprocesos
-+ [ ] Añadir los temas extra a los artículos viejos
 + [ ] Hacer una revisión general de contenido
 + [ ] Hacer una revisión general de estilizado

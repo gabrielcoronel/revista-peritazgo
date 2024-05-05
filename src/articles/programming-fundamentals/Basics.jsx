@@ -126,8 +126,6 @@ const VariablesSection = () => {
         En ambos casos, la variable <CodeText>A</CodeText> tiene como valor <CodeText>0</CodeText>.
       </RegularText>
 
-      <Heading1 text="Nombramiento de Variables" />
-
       <RegularText>
         El nombre de una variable puede ser cualquier secuencia de letras y números,
         mientras que esta no viole las siguientes restricciones.
@@ -172,8 +170,6 @@ const PointersSection = () => {
         dirección en memoria puede ser <BoldText>nula</BoldText>, entonces se
         dice que <ItalicText>el puntero no apunta a nada</ItalicText>.
       </RegularText>
-
-      <Heading1 text="Variables Puntero" />
 
       <RegularText>
         Una <BoldText>variable puntero</BoldText> a un tipo arbitrario
@@ -278,8 +274,6 @@ const AlgorithmsSection = () => {
         Un <BoldText>algoritmo</BoldText> es una secuencia de acciones lógicas
         necesarias para realizar una tarea en específico.
       </RegularText>
-
-      <Heading1 text="Características de los Algoritmos" />
 
       <RegularText>
         Todo algoritmo cumple las siguientes características.

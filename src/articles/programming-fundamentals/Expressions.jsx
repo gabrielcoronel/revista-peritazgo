@@ -4,7 +4,6 @@ import UnorderedList from '../../components/UnorderedList'
 import OrderedList from '../../components/OrderedList'
 import {
   Heading1,
-  Heading2,
   RegularText,
   BoldText,
   CodeText,
@@ -41,7 +40,7 @@ const OperatorsSection = () => {
         relacionales y lógicos.
       </RegularText>
 
-      <Heading2 text="Operadores Aritméticos" />
+      <Heading1 text="Operadores Aritméticos" />
 
       <RegularText>
         Los <BoldText>operadores aritméticos</BoldText> indican operaciones matemáticas
@@ -144,7 +143,7 @@ const OperatorsSection = () => {
         </RegularText>
       </UnorderedList>
 
-      <Heading2 text="Operadores Relacionales" />
+      <Heading1 text="Operadores Relacionales" />
 
       <RegularText>
         Los <BoldText>operadores relacionales o comparativos</BoldText> valoran el orden o equidad
@@ -227,7 +226,7 @@ const OperatorsSection = () => {
         </RegularText>
       </UnorderedList>
 
-      <Heading2 text="Operadores Lógicos" />
+      <Heading1 text="Operadores Lógicos" />
 
       <RegularText>
         Los <BoldText>operadores lógicos</BoldText> indican operaciones lógicas
@@ -336,7 +335,7 @@ const ExpressionsSection = () => {
         cabe la posibilidad de que se usen <BoldText>operadores lógicos</BoldText>.
       </RegularText>
 
-      <Heading2 text="Condiciones Lógicas" />
+      <Heading1 text="Condiciones Lógicas" />
 
       <RegularText>
         Si una <BoldText>expresión lógica</BoldText> se usa en el contexto de una estructura
