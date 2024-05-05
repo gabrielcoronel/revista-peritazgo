@@ -80,9 +80,26 @@ const FlowchartFiguresCarousel = () => {
   )
 }
 
-const InformaticsSection = () => {
+const GlossarySection = () => {
   return (
     <SectionContainer>
+      <Heading1 text="Datos e Información" />
+
+      <RegularText>
+        Un <BoldText>dato</BoldText> es una <BoldText>unidad mínima</BoldText>
+
+        <Space />
+
+        que puede ser almacenada y <BoldText>carece de significado por sí sola</BoldText>.
+        Por su parte, el término <BoldText>información</BoldText> se refiere
+        a todo conjunto de datos que ya pasó por un
+
+        <Space />
+
+        <BoldText>proceso de interpretación</BoldText>, de manera que ya
+        adquiere un significado y utilidad.
+      </RegularText>
+
       <Heading1 text="Informática" />
 
       <RegularText>
@@ -90,6 +107,14 @@ const InformaticsSection = () => {
         la creación de artificios capaces de la recolección, representación,
         organización y almacenamiento de la información de sistemas naturales
         (Cañedo, Ramos y Guerrero, 2005).
+      </RegularText>
+
+      <Heading1 text="Paradigma" />
+
+      <RegularText>
+        Un <BoldText>paradigma de programación</BoldText> es un conjunto de
+        principios específicos que rigen el diseño e implementación de un
+        sistema informático (Spigariol, 2005).
       </RegularText>
     </SectionContainer>
   )
@@ -378,16 +403,21 @@ const attachments = [
     icon: <BsFillBookmarkFill />,
     title: "Cañedo R., Ramos R. E., Guerrero J. C. (2005). La Informática, la Computación y la Ciencia de la Información: una alianza para el desarrollo. Acimed, 13(5).",
     link: "http://scielo.sld.cu/scielo.php?pid=s1024-94352005000500007&script=sci_arttext"
+  },
+  {
+    icon: <BsFillBookmarkFill />,
+    title: "Spigariol, L. (2005). Fundamentos teóricos de los Paradigmas de Programación. (1a. ed.). Buenos Aires: Universidad Tecnológica Nacional",
+    link: "https://d1wqtxts1xzle7.cloudfront.net/42704971/FundamTeoricosParadigProg-libre.pdf?1455640220=&response-content-disposition=inline%3B+filename%3DFundamentos_teoricos_de_los_Paradigmas_d.pdf&Expires=1714955488&Signature=bwwhOgXlBym-wCpuPr3myYEC~NWdBz8bP6FwV2K1OBxwQSCn6f~9r88UKrfCKOWTp4vtcs6pykfwhMDhB2P8Uc~f163UT3tEw8NPdbID61xbz0d2DAfCQTHmIG1Iqq~DRe-bN6dkBQ3eA3gcnjgfFblQd5IQPTWgxtQ1mTDL48wDpQSchB8-f3LepdUTo3xG9ebe4O5joXetvHGmQbOzGGcxdVdMmOtV6vSOWxa1BqVgBuJQd3R0EBzBXFKa03-dHov0x4DitUgw3EgVwCVF50x-Fh9IDaT4XWi2oJPnRjNqVGN9U~45GEnF4Bgku~UJ2HoYsybTDBQdt1VbQFa9cA__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA"
   }
 ]
 
 const routingConfiguration = {
-  defaultRoute: "informatics/",
+  defaultRoute: "glossary/",
   routes: [
     {
-      title: "Informática",
-      route: "informatics/",
-      component: <InformaticsSection />
+      title: "Glosario",
+      route: "glossary/",
+      component: <GlossarySection />
     },
     {
       title: "Variables",
