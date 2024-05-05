@@ -72,8 +72,8 @@ export default ({ attachments, isOpened, onClose }) => {
       open={isOpened}
       onClose={onClose}
     >
-      <div className="flex justify-center items-center  w-full h-full">
-        <div className="flex flex-col p-3 gap-y-3 w-3/4 h-fit outline-0 rounded-lg bg-regular_background">
+      <div className="flex justify-center items-center w-full h-full">
+        <div className="flex flex-col px-5 py-7 gap-y-3 w-3/4 h-fit outline-0 rounded-lg bg-regular_background">
           <div className="flex justify-between items-center w-full">
             <Heading1 text="Anexos" />
 
