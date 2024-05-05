@@ -1,6 +1,7 @@
 import ArticleContainer from '../../components/ArticleContainer'
 import SectionContainer from '../../components/SectionContainer'
 import Figure from '../../components/Figure'
+import FigureCarousel from '../../components/FigureCarousel'
 import UnorderedList from '../../components/UnorderedList'
 import {
   Heading1,
@@ -14,6 +15,70 @@ import { BsFillBookmarkFill } from 'react-icons/bs'
 import { FaAnglesDown } from 'react-icons/fa6'
 
 import TableFigure from '../../../public/databases-figures/table.svg'
+import EntityFigure from '../../../public/databases-figures/entity.svg'
+import RelationshipFigure from '../../../public/databases-figures/relationship.svg'
+import AttributeFigure from '../../../public/databases-figures/attribute.svg'
+import PrimaryKeyFigure from '../../../public/databases-figures/primary-key.svg'
+import ForeignKeyFigure from '../../../public/databases-figures/foreign-key.svg'
+import OneToOneFigure from '../../../public/databases-figures/one-to-one.svg'
+import OneToManyFigure from '../../../public/databases-figures/one-to-many.svg'
+import ManyToManyFigure from '../../../public/databases-figures/many-to-many.svg'
+import EntityRelationshipDiagramFigure from '../../../public/databases-figures/entity-relationship-diagram.svg'
+
+const EntityRelationshipDiagram = () => {
+  return (
+    <div className="flex justify-center items-center w-full">
+      <img
+        onClick={() => window.open(EntityRelationshipDiagramFigure)}
+        className="object-fit w-2/3 rounded-md cursor-pointer"
+        src={EntityRelationshipDiagramFigure}
+      />
+    </div>
+  )
+}
+
+const EntityRelationshipFigureCarousel = () => {
+  const figures = [
+    {
+      image: EntityFigure,
+      caption: "Entidad"
+    },
+    {
+      image: RelationshipFigure,
+      caption: "Relación"
+    },
+    {
+      image: AttributeFigure,
+      caption: "Atributo común"
+    },
+    {
+      image: PrimaryKeyFigure,
+      caption: "Llave primaria"
+    },
+    {
+      image: ForeignKeyFigure,
+      caption: "Llave foránea"
+    },
+    {
+      image: OneToOneFigure,
+      caption: "Cardinalidad de uno a uno"
+    },
+    {
+      image: OneToManyFigure,
+      caption: "Cardinalidad de uno a muchos"
+    },
+    {
+      image: ManyToManyFigure,
+      caption: "Cardinalidad de muchos a muchos"
+    }
+  ]
+
+  return (
+    <FigureCarousel
+      figures={figures}
+    />
+  )
+}
 
 const NormalFormsDiagram = () => {
   return (
@@ -314,6 +379,30 @@ const EntityRelationshipSection = () => {
           puede asociar a una cantidad arbitraria de instancias de <CodeText>B</CodeText>.
         </RegularText>
       </UnorderedList>
+
+      <Heading1 text="Simbología" />
+
+      <RegularText>
+        Los diagramas entidad-relación se representan mediante una
+
+        <Space />
+
+        <BoldText>simbología estándar</BoldText>:
+      </RegularText>
+
+      <EntityRelationshipFigureCarousel />
+
+      <RegularText>
+        Las entidades se <BoldText>conectan</BoldText> a sus respectivos
+        atributos. Las relaciones <BoldText>asocian</BoldText> dos entidades
+        mediante distintos tipos de flechas dependiendo de la
+
+        <Space />
+
+        <BoldText>cardinalidad</BoldText> de la relación.
+      </RegularText>
+
+      <EntityRelationshipDiagram />
     </SectionContainer>
   )
 }

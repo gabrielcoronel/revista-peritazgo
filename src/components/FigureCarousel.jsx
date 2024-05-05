@@ -1,3 +1,4 @@
+import 'animate.css'
 import { useState } from 'react'
 import { useHover } from '../utilities/hooks.js'
 import { FaBackward, FaForward } from 'react-icons/fa6'
@@ -23,7 +24,7 @@ export default ({ figures }) => {
   const currentFigure = figures[currentFigureIndex]
 
   const setNextFigureIndex = () => {
-    const nextFigureIndex = currentFigureIndex + 1 < 9
+    const nextFigureIndex = currentFigureIndex + 1 < figures.length
       ? currentFigureIndex + 1
       : 0
 
@@ -31,7 +32,7 @@ export default ({ figures }) => {
   }
 
   const setPreviousFigureIndex = () => {
-    const previousFigureIndex = currentFigureIndex - 1 >= 0
+    const previousFigureIndex = (currentFigureIndex - 1) >= 0
       ? currentFigureIndex - 1
       : figures.length - 1
 
@@ -41,7 +42,7 @@ export default ({ figures }) => {
   return (
     <div className="flex justify-center items-center w-full">
       <div className="flex flex-col justify-center items-center px-3 py-5 gap-y-3 bg-fragment_background rounded-md w-1/4">
-        <div className="flex justify-between items-center gap-x-5 w-full">
+        <div className="flex justify-between items-center w-full">
           <StepButton
             icon={<FaBackward />}
             onClick={setPreviousFigureIndex}
