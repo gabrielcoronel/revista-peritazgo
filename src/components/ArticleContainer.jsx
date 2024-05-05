@@ -1,3 +1,4 @@
+import 'animate.css'
 import { useState } from 'react'
 import { Route, Routes, Outlet } from 'react-router-dom'
 import { FaBookOpenReader } from 'react-icons/fa6'

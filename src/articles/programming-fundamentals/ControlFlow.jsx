@@ -1,8 +1,8 @@
-import ArticleContainer from '../components/ArticleContainer'
-import SectionContainer from '../components/SectionContainer'
-import Fragment from '../components/Fragment'
-import OrderedList from '../components/OrderedList'
-import Figure from '../components/Figure'
+import ArticleContainer from '../../components/ArticleContainer'
+import SectionContainer from '../../components/SectionContainer'
+import Fragment from '../../components/Fragment'
+import OrderedList from '../../components/OrderedList'
+import Figure from '../../components/Figure'
 import {
   Heading1,
   Heading2,
@@ -10,16 +10,16 @@ import {
   BoldText,
   CodeText,
   Space
-} from '../components/Typography'
+} from '../../components/Typography'
 import { IoExtensionPuzzleSharp } from 'react-icons/io5'
 
-import SimpleConditionalFigure from '../../public/control-flow-statements-figures/simple-conditional.svg'
-import DoubleConditionalFigure from '../../public/control-flow-statements-figures/double-conditional.svg'
-import MultipleConditionalFigure from '../../public/control-flow-statements-figures/multiple-conditional.svg'
-import NestedConditionalFigure from '../../public/control-flow-statements-figures/nested-conditional.svg'
-import ForCycleFigure from '../../public/control-flow-statements-figures/for-cycle.svg'
-import WhileCycleFigure from '../../public/control-flow-statements-figures/while-cycle.svg'
-import DoWhileCycleFigure from '../../public/control-flow-statements-figures/do-while-cycle.svg'
+import SimpleConditionalFigure from '../../../public/control-flow-statements-figures/simple-conditional.svg'
+import DoubleConditionalFigure from '../../../public/control-flow-statements-figures/double-conditional.svg'
+import MultipleConditionalFigure from '../../../public/control-flow-statements-figures/multiple-conditional.svg'
+import NestedConditionalFigure from '../../../public/control-flow-statements-figures/nested-conditional.svg'
+import ForCycleFigure from '../../../public/control-flow-statements-figures/for-cycle.svg'
+import WhileCycleFigure from '../../../public/control-flow-statements-figures/while-cycle.svg'
+import DoWhileCycleFigure from '../../../public/control-flow-statements-figures/do-while-cycle.svg'
 
 const SequentialsSection = () => {
   return (

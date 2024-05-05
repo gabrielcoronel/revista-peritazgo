@@ -8,12 +8,8 @@ import {
 import { useState } from 'react'
 import Menu from './components/Menu'
 import FloatingActionButton from './components/FloatingActionButton'
-import {
-  BasicConceptsArticle,
-  ExpressionsArticle,
-  ControlFlowStatementsArticle,
-  DataStructuresArticle
-} from './articles'
+import ProgrammingFundamentalsArticles from './articles/programming-fundamentals'
+import DatabasesArticles from './articles/databases'
 import { FiMenu } from 'react-icons/fi'
 import { IoClose } from 'react-icons/io5'
 
@@ -36,6 +32,19 @@ const units = [
       {
         name: "Estructuras de Datos",
         route: "programming-fundamentals/data-structures/"
+      }
+    ]
+  },
+  {
+    name: "Bases de Datos",
+    topics: [
+      {
+        name: "Conceptos Básicos",
+        route: "databases/basics/"
+      },
+      {
+        name: "Bases de Datos Relacionales",
+        route: "databases/relational/"
       }
     ]
   }
@@ -79,20 +88,28 @@ const router = createBrowserRouter([
     children: [
       {
         path: "programming-fundamentals/basics/*",
-        element: <BasicConceptsArticle />
+        element: <ProgrammingFundamentalsArticles.Basics />
       },
       {
         path: "programming-fundamentals/expressions/*",
-        element: <ExpressionsArticle />
+        element: <ProgrammingFundamentalsArticles.Expressions />
       },
       {
         path: "programming-fundamentals/control-flow/*",
-        element: <ControlFlowStatementsArticle />
+        element: <ProgrammingFundamentalsArticles.ControlFlow />
       },
       {
         path: "programming-fundamentals/data-structures/*",
-        element: <DataStructuresArticle />
+        element: <ProgrammingFundamentalsArticles.DataStructures />
       },
+      {
+        path: "databases/basics/*",
+        element: <DatabasesArticles.Basics />
+      },
+      {
+        path: "databases/relational/*",
+        element: <DatabasesArticles.RelationalDatabases />
+      }
     ]
   }
 ])

@@ -1,7 +1,7 @@
-import ArticleContainer from '../components/ArticleContainer'
-import SectionContainer from '../components/SectionContainer'
-import UnorderedList from '../components/UnorderedList'
-import OrderedList from '../components/OrderedList'
+import ArticleContainer from '../../components/ArticleContainer'
+import SectionContainer from '../../components/SectionContainer'
+import UnorderedList from '../../components/UnorderedList'
+import OrderedList from '../../components/OrderedList'
 import {
   Heading1,
   Heading2,
@@ -9,13 +9,13 @@ import {
   BoldText,
   CodeText,
   Space
-} from '../components/Typography'
+} from '../../components/Typography'
 import { IoExtensionPuzzleSharp } from 'react-icons/io5'
 
 const ValuesSection = () => {
   return (
     <SectionContainer>
-      <Heading1 text="Valores" scrollId="scroll-id__expressions-values" />
+      <Heading1 text="Valores" />
 
       <RegularText>
         Existen dos principales tipos de valores: los literales y las variables.
@@ -33,7 +33,7 @@ const ValuesSection = () => {
 const OperatorsSection = () => {
   return (
     <SectionContainer>
-      <Heading1 text="Operadores" scrollId="scroll-id__expressions-operators" />
+      <Heading1 text="Operadores" />
 
       <RegularText>
         De manera general, un operador es un símbolo que indica una operación.
@@ -319,7 +319,7 @@ const OperatorsSection = () => {
 const ExpressionsSection = () => {
   return (
     <SectionContainer>
-      <Heading1 text="Expresiones Aritméticas" scrollId="scroll-id__expressions-arithmetic-expressions" />
+      <Heading1 text="Expresiones Aritméticas" />
 
       <RegularText>
         Si una expresión contiene exclusivamente <BoldText>operadores aritméticos</BoldText>,
@@ -327,7 +327,7 @@ const ExpressionsSection = () => {
         expresiones producen exclusivamente <BoldText>números</BoldText>.
       </RegularText>
 
-      <Heading1 text="Expresiones Lógicas" scrollId="scroll-id__expressions-logical-expressions" />
+      <Heading1 text="Expresiones Lógicas" />
 
       <RegularText>
         Si una expresión contiene por lo menos un <BoldText>operador relacional</BoldText>,
@@ -351,7 +351,7 @@ const ExpressionsSection = () => {
 const EvaluationSection = () => {
   return (
     <SectionContainer>
-      <Heading1 text="Evaluación" scrollId="scroll-id__expressions-evaluation" />
+      <Heading1 text="Evaluación" />
 
       <RegularText>
         Para evaluar una expresión, se evalúa el uso de los distintos operadores en la

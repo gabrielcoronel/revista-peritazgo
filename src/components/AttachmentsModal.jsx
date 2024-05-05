@@ -25,7 +25,7 @@ const Attachment = ({ icon, title, link }) => {
   return (
     <div
       {...hoveringEvents}
-      onClick={() => window.open(link)}
+      onClick={link ? () => window.open(link) : null}
       className={
         `bg-regular_background rounded-md cursor-pointer w-fit`
       }

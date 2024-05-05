@@ -1,8 +1,8 @@
-import ArticleContainer from '../components/ArticleContainer'
-import SectionContainer from '../components/SectionContainer'
-import UnorderedList from '../components/UnorderedList'
-import Fragment from '../components/Fragment'
-import FigureCarousel from '../components/FigureCarousel'
+import ArticleContainer from '../../components/ArticleContainer'
+import SectionContainer from '../../components/SectionContainer'
+import UnorderedList from '../../components/UnorderedList'
+import Fragment from '../../components/Fragment'
+import FigureCarousel from '../../components/FigureCarousel'
 import {
   Heading1,
   RegularText,
@@ -10,20 +10,20 @@ import {
   ItalicText,
   CodeText,
   Space
-} from '../components/Typography'
+} from '../../components/Typography'
 import { BsFillBookmarkFill } from 'react-icons/bs'
 
-import StartEndFigure from '../../public/flowchart-figures/start-end.png'
-import ProcessFigure from '../../public/flowchart-figures/process.png'
-import ConditionalFigure from '../../public/flowchart-figures/conditional.png'
-import CycleFigure from '../../public/flowchart-figures/cycle.png'
-import DataInputFigure from '../../public/flowchart-figures/data-input.png'
-import ScreenDisplayFigure from '../../public/flowchart-figures/screen-display.png'
-import OnPageConnectorFigure from '../../public/flowchart-figures/on-page-connector.png'
-import OffPageConnectorFigure from '../../public/flowchart-figures/off-page-connector.png'
-import KeyboardInputFigure from '../../public/flowchart-figures/keyboard-input.png'
-import DatabaseFigure from '../../public/flowchart-figures/database.png'
-import CloudFigure from '../../public/flowchart-figures/cloud.png'
+import StartEndFigure from '../../../public/flowchart-figures/start-end.png'
+import ProcessFigure from '../../../public/flowchart-figures/process.png'
+import ConditionalFigure from '../../../public/flowchart-figures/conditional.png'
+import CycleFigure from '../../../public/flowchart-figures/cycle.png'
+import DataInputFigure from '../../../public/flowchart-figures/data-input.png'
+import ScreenDisplayFigure from '../../../public/flowchart-figures/screen-display.png'
+import OnPageConnectorFigure from '../../../public/flowchart-figures/on-page-connector.png'
+import OffPageConnectorFigure from '../../../public/flowchart-figures/off-page-connector.png'
+import KeyboardInputFigure from '../../../public/flowchart-figures/keyboard-input.png'
+import DatabaseFigure from '../../../public/flowchart-figures/database.png'
+import CloudFigure from '../../../public/flowchart-figures/cloud.png'
 
 const FlowchartFiguresCarousel = () => {
   const figures = [
@@ -406,7 +406,7 @@ const routingConfiguration = {
       component: <PointersSection />
     },
     {
-      title: "Algoritmos, pseudocódigo y diagramas de flujo",
+      title: "Algoritmos, Pseudocódigo y Diagramas de Flujo",
       route: "algorithms-pseudocode-flowcharts/",
       component: <AlgorithmsSection />
     },

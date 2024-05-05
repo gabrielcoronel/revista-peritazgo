@@ -1,8 +1,8 @@
-import ArticleContainer from '../components/ArticleContainer'
-import SectionContainer from '../components/SectionContainer'
-import Fragment from '../components/Fragment'
-import OrderedList from '../components/OrderedList'
-import UnorderedList from '../components/UnorderedList'
+import ArticleContainer from '../../components/ArticleContainer'
+import SectionContainer from '../../components/SectionContainer'
+import Fragment from '../../components/Fragment'
+import OrderedList from '../../components/OrderedList'
+import UnorderedList from '../../components/UnorderedList'
 import {
   Heading1,
   Heading2,
@@ -11,10 +11,10 @@ import {
   ItalicText,
   Space,
   CodeText
-} from '../components/Typography'
+} from '../../components/Typography'
 import { IoExtensionPuzzleSharp } from 'react-icons/io5'
 
-import DataStructureClassificationDiagramFigure from '../../public/data-structures-figures/data-structure-classification-diagram.png'
+import DataStructureClassificationDiagramFigure from '../../../public/data-structures-figures/data-structure-classification-diagram.png'
 
 const DataStructureClassificationDiagram = () => {
   return (
@@ -39,10 +39,7 @@ const ClassificationSection = () => {
 const StaticsSection = () => {
   return (
     <SectionContainer>
-      <Heading1
-        text="Estructuras de Datos Estáticas"
-        scrollId="scroll-id__data-structures-static"
-      />
+      <Heading1 text="Estructuras de Datos Estáticas" />
 
       <RegularText>
         Una <BoldText>estructura de datos estática</BoldText> es aquella cuyo
@@ -195,10 +192,7 @@ const StaticsSection = () => {
 const DynamicsSection = () => {
   return (
     <SectionContainer>
-      <Heading1
-        text="Estructuras de Datos Dinámicas"
-        scrollId="scroll-id__data-structures-dynamic"
-      />
+      <Heading1 text="Estructuras de Datos Dinámicas" />
 
       <RegularText>
         Una <BoldText>estructura de datos dinámica</BoldText> es aquella cuyo
