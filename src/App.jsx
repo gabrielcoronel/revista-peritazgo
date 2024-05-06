@@ -30,6 +30,10 @@ const units = [
         route: "programming-fundamentals/control-flow/"
       },
       {
+        name :"Subprocesos",
+        route: "programming-fundamentals/subprocesses"
+      },
+      {
         name: "Estructuras de Datos",
         route: "programming-fundamentals/data-structures/"
       }
@@ -97,6 +101,10 @@ const router = createBrowserRouter([
       {
         path: "programming-fundamentals/control-flow/*",
         element: <ProgrammingFundamentalsArticles.ControlFlow />
+      },
+      {
+        path: "programming-fundamentals/subprocesses/*",
+        element: <ProgrammingFundamentalsArticles.Subprocesses />
       },
       {
         path: "programming-fundamentals/data-structures/*",
