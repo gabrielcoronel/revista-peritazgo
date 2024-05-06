@@ -229,26 +229,23 @@ const attachments = [
   }
 ]
 
-const routingConfiguration = {
-  defaultRoute: "sequentials/",
-  routes: [
-    {
-      title: "Secuenciales",
-      route: "sequentials/",
-      component: <SequentialsSection />
-    },
-    {
-      title: "Condicionales",
-      route: "conditionals/",
-      component: <ConditionalsSection />
-    },
-    {
-      title: "Repetitivas",
-      route: "cycles/",
-      component: <CyclesSection />
-    },
-  ]
-}
+const routingConfiguration = [
+  {
+    title: "Secuenciales",
+    route: "sequentials/",
+    component: <SequentialsSection />
+  },
+  {
+    title: "Condicionales",
+    route: "conditionals/",
+    component: <ConditionalsSection />
+  },
+  {
+    title: "Repetitivas",
+    route: "cycles/",
+    component: <CyclesSection />
+  },
+]
 
 export default () => {
   return (

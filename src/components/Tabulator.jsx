@@ -1,20 +1,6 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useHover } from '../utilities/hooks'
-import { useLocation, useNavigate } from 'react-router-dom'
-
-const useUrlPostfix = () => {
-  const location = useLocation()
-  const postfix = location.pathname.split("/").at(-2) + "/"
-
-  return postfix
-}
-
-const doesUrlPostfixMatchAnyRoute = (urlPostfix, routingConfiguration) => {
-  const availableRoutes = routingConfiguration.routes.map(({ route }) => route)
-  const needsToRedirect = availableRoutes.includes(urlPostfix)
-
-  return needsToRedirect
-}
+import { useNavigate } from 'react-router-dom'
 
 const Tile = ({ title, isSelected, onSelect }) => {
     const [isHovering, hoveringEvents] = useHover()
@@ -40,23 +26,20 @@ const Tile = ({ title, isSelected, onSelect }) => {
 
 export default ({ routingConfiguration }) => {
   const navigate = useNavigate()
-  const urlPostfix = useUrlPostfix()
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
-    if (!doesUrlPostfixMatchAnyRoute(urlPostfix, routingConfiguration)) {
-      navigate(routingConfiguration.defaultRoute)
-    }
-  }, [urlPostfix])
+    navigate(routingConfiguration[currentIndex].route)
+  }, [currentIndex])
 
   const tabulatorTiles = routingConfiguration
-    .routes
-    .map(({ title, route }, index) => {
+    .map(({ title }, index) => {
       return (
         <Tile
           key={index}
           title={title}
-          isSelected={urlPostfix === route}
-          onSelect={() => navigate(route)}
+          isSelected={index === currentIndex}
+          onSelect={() => setCurrentIndex(index)}
         />
       )
     })

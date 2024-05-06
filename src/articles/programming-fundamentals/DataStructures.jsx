@@ -818,41 +818,38 @@ const attachments = [
   }
 ]
 
-const routingConfiguration = {
-  defaultRoute: "classification/",
-  routes: [
-    {
-      title: "Clasificación",
-      route: "classification/",
-      component: <ClassificationSection />
-    },
-    {
-      title: "Estáticas",
-      route: "statics/",
-      component: <StaticsSection />
-    },
-    {
-      title: "Ordenamiento",
-      route: "sorting/",
-      component: <SortingSection />
-    },
-    {
-      title: "Dinámicas",
-      route: "dynamics/",
-      component: <DynamicsSection />
-    },
-    {
-      title: "Dinámicas Lineales",
-      route: "linear-dynamics/",
-      component: <LinearDynamicsSection />
-    },
-    {
-      title: "Dinámicas No Lineales",
-      route: "non-linear-dynamics/",
-      component: <NonLinearDynamicsSection />
-    },
-  ]
-}
+const routingConfiguration = [
+  {
+    title: "Clasificación",
+    route: "classification/",
+    component: <ClassificationSection />
+  },
+  {
+    title: "Estáticas",
+    route: "statics/",
+    component: <StaticsSection />
+  },
+  {
+    title: "Ordenamiento",
+    route: "sorting/",
+    component: <SortingSection />
+  },
+  {
+    title: "Dinámicas",
+    route: "dynamics/",
+    component: <DynamicsSection />
+  },
+  {
+    title: "Dinámicas Lineales",
+    route: "linear-dynamics/",
+    component: <LinearDynamicsSection />
+  },
+  {
+    title: "Dinámicas No Lineales",
+    route: "non-linear-dynamics/",
+    component: <NonLinearDynamicsSection />
+  },
+]
 
 export default () => {
     return (

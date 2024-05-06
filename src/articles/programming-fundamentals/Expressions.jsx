@@ -419,31 +419,28 @@ const attachments = [
   }
 ]
 
-const routingConfiguration = {
-  defaultRoute: "values/",
-  routes: [
-    {
-      title: "Valores",
-      route: "values/",
-      component: <ValuesSection />
-    },
-    {
-      title: "Operadores",
-      route: "operators/",
-      component: <OperatorsSection />
-    },
-    {
-      title: "Expresiones",
-      route: "expressions/",
-      component: <ExpressionsSection />
-    },
-    {
-      title: "Evaluación",
-      route: "evaluation/",
-      component: <EvaluationSection />
-    }
-  ]
-}
+const routingConfiguration = [
+  {
+    title: "Valores",
+    route: "values/",
+    component: <ValuesSection />
+  },
+  {
+    title: "Operadores",
+    route: "operators/",
+    component: <OperatorsSection />
+  },
+  {
+    title: "Expresiones",
+    route: "expressions/",
+    component: <ExpressionsSection />
+  },
+  {
+    title: "Evaluación",
+    route: "evaluation/",
+    component: <EvaluationSection />
+  }
+]
 
 export default () => {
   return (

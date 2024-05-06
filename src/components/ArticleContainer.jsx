@@ -20,7 +20,6 @@ export default ({ title, routingConfiguration, attachments, children }) => {
   const [isShowingAttachments, setIsShowingAttachments] = useState(false)
 
   const routesElements = routingConfiguration
-    .routes
     .map(({ route, component }, index) => {
       return (
         <Route

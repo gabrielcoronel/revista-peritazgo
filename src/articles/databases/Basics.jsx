@@ -99,16 +99,13 @@ const DataHierarchySection = () => {
   )
 }
 
-const routingConfiguration = {
-  defaultRoute: "data-hierarchy/",
-  routes: [
-    {
-      title: "Jerarquía de Datos",
-      route: "data-hierarchy/",
-      component: <DataHierarchySection />
-    }
-  ]
-}
+const routingConfiguration = [
+  {
+    title: "Jerarquía de Datos",
+    route: "data-hierarchy/",
+    component: <DataHierarchySection />
+  }
+]
 
 export default () => {
   return (

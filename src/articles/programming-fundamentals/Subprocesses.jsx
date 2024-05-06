@@ -232,21 +232,18 @@ const ParametersSection = () => {
   )
 }
 
-const routingConfiguration = {
-  defaultRoute: "subprocesses/",
-  routes: [
-    {
-      title: "Subprocesos",
-      route: "subprocesses/",
-      component: <SubprocessesSection />
-    },
-    {
-      title: "Parámetros",
-      route: "parameters/",
-      component: <ParametersSection />
-    }
-  ]
-}
+const routingConfiguration = [
+  {
+    title: "Subprocesos",
+    route: "subprocesses/",
+    component: <SubprocessesSection />
+  },
+  {
+    title: "Parámetros",
+    route: "parameters/",
+    component: <ParametersSection />
+  }
+]
 
 export default () => {
   return (

@@ -492,26 +492,23 @@ const attachments = [
   }
 ]
 
-const routingConfiguration = {
-  defaultRoute: "tables-fields-records/",
-  routes: [
-    {
-      title: "Tablas, Campos y Registros",
-      route: "tables-fields-records/",
-      component: <TablesSection />
-    },
-    {
-      title: "Diagramas Entidad-Relación",
-      route: "entity-relationship-diagrams/",
-      component: <EntityRelationshipSection />
-    },
-    {
-      title: "Normalización",
-      route: "normalization/",
-      component: <NormalizationSection />
-    }
-  ]
-}
+const routingConfiguration = [
+  {
+    title: "Tablas, Campos y Registros",
+    route: "tables-fields-records/",
+    component: <TablesSection />
+  },
+  {
+    title: "Diagramas Entidad-Relación",
+    route: "entity-relationship-diagrams/",
+    component: <EntityRelationshipSection />
+  },
+  {
+    title: "Normalización",
+    route: "normalization/",
+    component: <NormalizationSection />
+  }
+]
 
 export default () => {
   return (

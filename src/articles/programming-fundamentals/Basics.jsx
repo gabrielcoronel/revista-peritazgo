@@ -411,31 +411,28 @@ const attachments = [
   }
 ]
 
-const routingConfiguration = {
-  defaultRoute: "glossary/",
-  routes: [
-    {
-      title: "Glosario",
-      route: "glossary/",
-      component: <GlossarySection />
-    },
-    {
-      title: "Variables",
-      route: "variables/",
-      component: <VariablesSection />
-    },
-    {
-      title: "Punteros",
-      route: "pointers/",
-      component: <PointersSection />
-    },
-    {
-      title: "Algoritmos, Pseudocódigo y Diagramas de Flujo",
-      route: "algorithms-pseudocode-flowcharts/",
-      component: <AlgorithmsSection />
-    },
-  ]
-}
+const routingConfiguration = [
+  {
+    title: "Glosario",
+    route: "glossary/",
+    component: <GlossarySection />
+  },
+  {
+    title: "Variables",
+    route: "variables/",
+    component: <VariablesSection />
+  },
+  {
+    title: "Punteros",
+    route: "pointers/",
+    component: <PointersSection />
+  },
+  {
+    title: "Algoritmos, Pseudocódigo y Diagramas de Flujo",
+    route: "algorithms-pseudocode-flowcharts/",
+    component: <AlgorithmsSection />
+  },
+]
 
 export default () => {
   return (
