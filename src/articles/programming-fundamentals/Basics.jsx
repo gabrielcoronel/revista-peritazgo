@@ -1,5 +1,6 @@
 import ArticleContainer from '../../components/ArticleContainer'
 import SectionContainer from '../../components/SectionContainer'
+import OrderedList from '../../components/OrderedList'
 import UnorderedList from '../../components/UnorderedList'
 import Fragment from '../../components/Fragment'
 import FigureCarousel from '../../components/FigureCarousel'
@@ -334,6 +335,44 @@ const AlgorithmsSection = () => {
             Siempre produce el mismo resultado
           </RegularText>
         </UnorderedList>
+
+        <RegularText>
+          Los algoritmos están compuestos de tres principales elementos:
+          
+          una <BoldText>entrada</BoldText>,  un <BoldText>proceso</BoldText> y
+          una <BoldText>salida</BoldText>.
+        </RegularText>
+
+        <OrderedList>
+          <RegularText>
+            <BoldText>
+              Entrada:
+            </BoldText>
+
+            <Space />
+
+            Datos que recibe el algoritmo.
+          </RegularText>
+          <RegularText>
+            <BoldText>
+              Proceso:
+            </BoldText>
+
+            <Space />
+
+            Instrucciones que manipulan los datos de <BoldText>entrada</BoldText>.
+          </RegularText>
+
+          <RegularText>
+            <BoldText>
+              Salida:
+            </BoldText>
+
+            <Space />
+
+            Información resultante del <BoldText>proceso</BoldText>.
+          </RegularText>
+        </OrderedList>
       </RegularText>
 
       <Heading1 text="Pseudocódigo" />
