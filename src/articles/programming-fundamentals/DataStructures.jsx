@@ -20,10 +20,15 @@ import { FaMinus, FaPlus } from 'react-icons/fa6'
 
 import DataStructureClassificationDiagramFigure from '../../../public/data-structures-figures/data-structure-classification-diagram.png'
 
-const generateRandomNumber = () => {
-  const randomNumber = Math.round(Math.random() * 9) + 1
+const generateItem = () => {
+  const number = Math.round(Math.random() * 9) + 1
+  const uuid = generateUuid()
+  const item = {
+    number,
+    uuid
+  }
 
-  return randomNumber
+  return item
 }
 
 const DataStructureClassificationDiagram = () => {
@@ -61,11 +66,11 @@ const BehaviorInteractiveExampleButton = ({ icon, onClick }) => {
 }
 
 const BehaviorInteractiveExampleItemList = ({ items }) => {
-  const itemsElements = items.map((number) => {
+  const itemsElements = items.map(({ number, uuid }) => {
     return (
       <div
-        key={generateUuid()}
-        className="flex justify-center items-center py-1 w-20 rounded-lg bg-accent_background animate__animated animate__fadeInRight animate__FadeOutLeft"
+        key={uuid}
+        className="flex justify-center items-center py-1 w-20 rounded-lg bg-accent_background animate__animated animate__fadeIn"
       >
         <span className="text-lg font-bold text-regular_background">
           {number}
@@ -75,42 +80,42 @@ const BehaviorInteractiveExampleItemList = ({ items }) => {
   })
 
   return (
-    <div className="flex flex-col-reverse items-center gap-y-3">
+    <div className="flex flex-row grow items-center gap-x-3">
       {itemsElements}
     </div>
   )
 }
 
 const StackInteractiveExample = () => {
-  const [numbers, setNumbers] = useState([generateRandomNumber()])
+  const [items, setItems] = useState([generateItem()])
 
-  const addNumber = () => {
-    const newNumbers = [...numbers, generateRandomNumber()]
+  const addItem = () => {
+    const newItems = [...items, generateItem()]
 
-    setNumbers(newNumbers)
+    setItems(newItems)
   }
 
-  const removeNumber = () => {
-    const newNumbers = numbers.slice(0, -1)
+  const removeItem = () => {
+    const newItems = items.slice(0, -1)
 
-    setNumbers(newNumbers)
+    setItems(newItems)
   }
 
   return (
     <div className="flex justify-center items-center w-full">
-      <div className="flex justify-between items-end gap-x-5 w-1/3">
+      <div className="flex justify-between items-end gap-x-5 w-1/2">
         <BehaviorInteractiveExampleButton
           icon={<FaMinus />}
-          onClick={removeNumber}
+          onClick={removeItem}
         />
 
         <BehaviorInteractiveExampleItemList
-          items={numbers}
+          items={items}
         />
 
         <BehaviorInteractiveExampleButton
           icon={<FaPlus />}
-          onClick={addNumber}
+          onClick={addItem}
         />
       </div>
     </div>
@@ -118,35 +123,35 @@ const StackInteractiveExample = () => {
 }
 
 const QueueInteractiveExample = () => {
-  const [numbers, setNumbers] = useState([generateRandomNumber()])
+  const [items, setItems] = useState([generateItem()])
 
-  const addNumber = () => {
-    const newNumbers = [generateRandomNumber(), ...numbers]
+  const addItem = () => {
+    const newItems = [generateItem(), ...items]
 
-    setNumbers(newNumbers)
+    setItems(newItems)
   }
 
-  const removeNumber = () => {
-    const newNumbers = numbers.slice(0, -1)
+  const removeItem = () => {
+    const newItems = items.slice(0, -1)
 
-    setNumbers(newNumbers)
+    setItems(newItems)
   }
 
   return (
     <div className="flex justify-center items-center w-full">
-      <div className="flex justify-between items-end gap-x-5 w-1/3">
+      <div className="flex justify-between items-end gap-x-5 w-1/2">
         <BehaviorInteractiveExampleButton
           icon={<FaMinus />}
-          onClick={removeNumber}
+          onClick={removeItem}
         />
 
         <BehaviorInteractiveExampleItemList
-          items={numbers}
+          items={items}
         />
 
         <BehaviorInteractiveExampleButton
           icon={<FaPlus />}
-          onClick={addNumber}
+          onClick={addItem}
         />
       </div>
     </div>
