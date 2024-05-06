@@ -1,7 +1,4 @@
 import "animate.css"
-import { useState } from 'react'
-import { useHover } from '../../utilities/hooks'
-import { v4 as generateUuid } from 'uuid'
 import ArticleContainer from '../../components/ArticleContainer'
 import SectionContainer from '../../components/SectionContainer'
 import Fragment from '../../components/Fragment'
@@ -15,21 +12,16 @@ import {
   Space,
   CodeText
 } from '../../components/Typography'
+import {
+  BubbleSortInteractiveExample,
+  SelectionSortInteractiveExample,
+  InsertionSortInteractiveExample,
+  StackInteractiveExample,
+  QueueInteractiveExample
+} from '../../components/InteractiveExamples'
 import { IoExtensionPuzzleSharp } from 'react-icons/io5'
-import { FaMinus, FaPlus } from 'react-icons/fa6'
 
 import DataStructureClassificationDiagramFigure from '../../../public/data-structures-figures/data-structure-classification-diagram.png'
-
-const generateItem = () => {
-  const number = Math.round(Math.random() * 9) + 1
-  const uuid = generateUuid()
-  const item = {
-    number,
-    uuid
-  }
-
-  return item
-}
 
 const DataStructureClassificationDiagram = () => {
   return (
@@ -39,121 +31,6 @@ const DataStructureClassificationDiagram = () => {
         className="object-fit w-2/3 rounded-md cursor-pointer"
         src={DataStructureClassificationDiagramFigure}
       />
-    </div>
-  )
-}
-
-const BehaviorInteractiveExampleButton = ({ icon, onClick }) => {
-  const [isHovering, hoveringEvents] = useHover()
-
-  return (
-    <div
-      {...hoveringEvents}
-      className={
-        `flex justify-center items-center h-fit w-fit p-3 rounded-full transition-colors cursor-pointer duration-300 ${isHovering ? "bg-accent_background" : "bg-regular_background" }`
-      }
-      onClick={onClick}
-    >
-      <span
-        className={
-          `text-3xl ${isHovering ? "text-regular_background" : "text-accent_text"}`
-        }
-      >
-        {icon}
-      </span>
-    </div>
-  )
-}
-
-const BehaviorInteractiveExampleItemList = ({ items }) => {
-  const itemsElements = items.map(({ number, uuid }) => {
-    return (
-      <div
-        key={uuid}
-        className="flex justify-center items-center py-1 w-20 rounded-lg bg-accent_background animate__animated animate__fadeIn"
-      >
-        <span className="text-lg font-bold text-regular_background">
-          {number}
-        </span>
-      </div>
-    )
-  })
-
-  return (
-    <div className="flex flex-row grow items-center gap-x-3">
-      {itemsElements}
-    </div>
-  )
-}
-
-const StackInteractiveExample = () => {
-  const [items, setItems] = useState([generateItem()])
-
-  const addItem = () => {
-    const newItems = [...items, generateItem()]
-
-    setItems(newItems)
-  }
-
-  const removeItem = () => {
-    const newItems = items.slice(0, -1)
-
-    setItems(newItems)
-  }
-
-  return (
-    <div className="flex justify-center items-center w-full">
-      <div className="flex justify-between items-end gap-x-5 w-1/2">
-        <BehaviorInteractiveExampleButton
-          icon={<FaMinus />}
-          onClick={removeItem}
-        />
-
-        <BehaviorInteractiveExampleItemList
-          items={items}
-        />
-
-        <BehaviorInteractiveExampleButton
-          icon={<FaPlus />}
-          onClick={addItem}
-        />
-      </div>
-    </div>
-  )
-}
-
-const QueueInteractiveExample = () => {
-  const [items, setItems] = useState([generateItem()])
-
-  const addItem = () => {
-    const newItems = [generateItem(), ...items]
-
-    setItems(newItems)
-  }
-
-  const removeItem = () => {
-    const newItems = items.slice(0, -1)
-
-    setItems(newItems)
-  }
-
-  return (
-    <div className="flex justify-center items-center w-full">
-      <div className="flex justify-between items-end gap-x-5 w-1/2">
-        <BehaviorInteractiveExampleButton
-          icon={<FaMinus />}
-          onClick={removeItem}
-        />
-
-        <BehaviorInteractiveExampleItemList
-          items={items}
-        />
-
-        <BehaviorInteractiveExampleButton
-          icon={<FaPlus />}
-          onClick={addItem}
-        />
-      </div>
     </div>
   )
 }
@@ -374,6 +251,8 @@ const SortingSection = () => {
         </RegularText>
       </OrderedList>
 
+      <BubbleSortInteractiveExample />
+
       <Heading1 text="Ordenamiento por Selección" />
 
       <RegularText>
@@ -419,6 +298,8 @@ const SortingSection = () => {
           que <CodeText>posiciona_actual {"<"} l</CodeText>.
         </RegularText>
       </OrderedList>
+
+      <SelectionSortInteractiveExample />
 
       <Heading1 text="Ordenamiento por Inserción" />
 
@@ -474,6 +355,8 @@ const SortingSection = () => {
           que <CodeText>posiciona_actual {"<"} l</CodeText>.
         </RegularText>
       </OrderedList>
+
+      <InsertionSortInteractiveExample />
     </SectionContainer>
   )
 }
