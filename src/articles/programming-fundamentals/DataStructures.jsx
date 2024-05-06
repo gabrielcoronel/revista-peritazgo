@@ -1,3 +1,7 @@
+import "animate.css"
+import { useState } from 'react'
+import { useHover } from '../../utilities/hooks'
+import { v4 as generateUuid } from 'uuid'
 import ArticleContainer from '../../components/ArticleContainer'
 import SectionContainer from '../../components/SectionContainer'
 import Fragment from '../../components/Fragment'
@@ -5,7 +9,6 @@ import OrderedList from '../../components/OrderedList'
 import UnorderedList from '../../components/UnorderedList'
 import {
   Heading1,
-  Heading2,
   RegularText,
   BoldText,
   ItalicText,
@@ -13,8 +16,15 @@ import {
   CodeText
 } from '../../components/Typography'
 import { IoExtensionPuzzleSharp } from 'react-icons/io5'
+import { FaMinus, FaPlus } from 'react-icons/fa6'
 
 import DataStructureClassificationDiagramFigure from '../../../public/data-structures-figures/data-structure-classification-diagram.png'
+
+const generateRandomNumber = () => {
+  const randomNumber = Math.round(Math.random() * 9) + 1
+
+  return randomNumber
+}
 
 const DataStructureClassificationDiagram = () => {
   return (
@@ -24,6 +34,121 @@ const DataStructureClassificationDiagram = () => {
         className="object-fit w-2/3 rounded-md cursor-pointer"
         src={DataStructureClassificationDiagramFigure}
       />
+    </div>
+  )
+}
+
+const BehaviorInteractiveExampleButton = ({ icon, onClick }) => {
+  const [isHovering, hoveringEvents] = useHover()
+
+  return (
+    <div
+      {...hoveringEvents}
+      className={
+        `flex justify-center items-center h-fit w-fit p-3 rounded-full transition-colors cursor-pointer duration-300 ${isHovering ? "bg-accent_background" : "bg-regular_background" }`
+      }
+      onClick={onClick}
+    >
+      <span
+        className={
+          `text-3xl ${isHovering ? "text-regular_background" : "text-accent_text"}`
+        }
+      >
+        {icon}
+      </span>
+    </div>
+  )
+}
+
+const BehaviorInteractiveExampleItemList = ({ items }) => {
+  const itemsElements = items.map((number) => {
+    return (
+      <div
+        key={generateUuid()}
+        className="flex justify-center items-center py-1 w-20 rounded-lg bg-accent_background animate__animated animate__fadeInRight animate__FadeOutLeft"
+      >
+        <span className="text-lg font-bold text-regular_background">
+          {number}
+        </span>
+      </div>
+    )
+  })
+
+  return (
+    <div className="flex flex-col-reverse items-center gap-y-3">
+      {itemsElements}
+    </div>
+  )
+}
+
+const StackInteractiveExample = () => {
+  const [numbers, setNumbers] = useState([generateRandomNumber()])
+
+  const addNumber = () => {
+    const newNumbers = [...numbers, generateRandomNumber()]
+
+    setNumbers(newNumbers)
+  }
+
+  const removeNumber = () => {
+    const newNumbers = numbers.slice(0, -1)
+
+    setNumbers(newNumbers)
+  }
+
+  return (
+    <div className="flex justify-center items-center w-full">
+      <div className="flex justify-between items-end gap-x-5 w-1/3">
+        <BehaviorInteractiveExampleButton
+          icon={<FaMinus />}
+          onClick={removeNumber}
+        />
+
+        <BehaviorInteractiveExampleItemList
+          items={numbers}
+        />
+
+        <BehaviorInteractiveExampleButton
+          icon={<FaPlus />}
+          onClick={addNumber}
+        />
+      </div>
+    </div>
+  )
+}
+
+const QueueInteractiveExample = () => {
+  const [numbers, setNumbers] = useState([generateRandomNumber()])
+
+  const addNumber = () => {
+    const newNumbers = [generateRandomNumber(), ...numbers]
+
+    setNumbers(newNumbers)
+  }
+
+  const removeNumber = () => {
+    const newNumbers = numbers.slice(0, -1)
+
+    setNumbers(newNumbers)
+  }
+
+  return (
+    <div className="flex justify-center items-center w-full">
+      <div className="flex justify-between items-end gap-x-5 w-1/3">
+        <BehaviorInteractiveExampleButton
+          icon={<FaMinus />}
+          onClick={removeNumber}
+        />
+
+        <BehaviorInteractiveExampleItemList
+          items={numbers}
+        />
+
+        <BehaviorInteractiveExampleButton
+          icon={<FaPlus />}
+          onClick={addNumber}
+        />
+      </div>
     </div>
   )
 }
@@ -51,7 +176,7 @@ const StaticsSection = () => {
         y los <BoldText>registros</BoldText>.
       </RegularText>
 
-      <Heading2 text="Arreglos" />
+      <Heading1 text="Arreglos" />
 
       <RegularText>
         Los <BoldText>arreglos</BoldText> son estructuras de datos estáticas que
@@ -138,7 +263,7 @@ const StaticsSection = () => {
         </RegularText>
       </OrderedList>
 
-      <Heading2 text="Registros" />
+      <Heading1 text="Registros" />
 
       <RegularText>
         Los <BoldText>registros</BoldText> son estructuras de datos estáticas
@@ -361,11 +486,11 @@ const DynamicsSection = () => {
         <Space />
 
         <BoldText>no lineales</BoldText>. A pesar de esta diferenciación,
-        siempre hay un mismo protagonista en todas las estructuras de datos
-        dinámicas: <BoldText>el nodo</BoldText>
+        siempre hay un mismo <ItalicText>protagonista</ItalicText> en todas las
+        estructuras de datos dinámicas: <BoldText>el nodo</BoldText>.
       </RegularText>
 
-      <Heading2 text="Nodos" />
+      <Heading1 text="Nodos" />
 
       <RegularText>
         Un <BoldText>nodo</BoldText> es un <BoldText>registro</BoldText> que
@@ -382,7 +507,23 @@ const DynamicsSection = () => {
         </RegularText>
       </UnorderedList>
 
-      <Heading2 text="Estructuras de Datos Dinámicas Lineales" />
+      <RegularText>
+        Todas las estructuras de datos dinámicas están compuestas de varios
+        nodos que <ItalicText>apuntan entre sí</ItalicText>. Es por esta razón,
+        que se dice que los nodos son el <ItalicText>protagonista</ItalicText>
+
+        <Space />
+
+        de las estructuras de datos dinámicas.
+      </RegularText>
+    </SectionContainer>
+  )
+}
+
+const LinearDynamicsSection = () => {
+  return (
+    <SectionContainer>
+      <Heading1 text="Estructuras de Datos Dinámicas Lineales" />
 
       <RegularText>
         Las <BoldText>estructuras de datos dinámicas lineales</BoldText> son
@@ -393,8 +534,6 @@ const DynamicsSection = () => {
 
         <BoldText>recorrer todos los elementos anteriores a este</BoldText>.
       </RegularText>
-
-      <Heading2 text="Listas Enlazadas" />
 
       <RegularText>
         Las <BoldText>listas enlazadas</BoldText> (también conocidas como
@@ -413,17 +552,96 @@ const DynamicsSection = () => {
 
         <BoldText>secuencia de nodos</BoldText>
 
+        <Space />
+
         donde cada nodo tiene su campo de puntero
 
         <Space />
 
         <BoldText>apuntando a otro nodo en la secuencia</BoldText>
 
+        <Space />
+
         (que no haya sido apuntado por otro nodo anteriormente), a excepción del
-        último nodo de la lista.
+        último nodo de la lista, que apunta a una dirección nula.
       </RegularText>
 
-      <Heading2 text="Estructuras de Datos Dinámicas No Lineales" />
+      <Heading1 text="Pilas o FIFO's" />
+
+      <RegularText>
+        El concepto de
+
+        <Space />
+
+        <BoldText>pila o FIFO (<ItalicText>First In First Out</ItalicText>)</BoldText>
+
+        <Space />
+
+        describe un <BoldText>comportamiento específico</BoldText> de una lista
+        enlazada donde
+      </RegularText>
+
+      <UnorderedList>
+        <RegularText>
+          Solo se pueden insertar elementos en el <BoldText>final de la lista</BoldText>.
+        </RegularText>
+
+        <RegularText>
+          Solo se pueden extraer elementos del <BoldText>final de la lista</BoldText>.
+        </RegularText>
+      </UnorderedList>
+
+      <RegularText>
+        Un ejemplo de este comportamiento es un montón de platos apilados. La
+        manera más práctica de añadir un plato al montón es apilandolo en la
+        cima. Para no quebrar ningún plato, solo se pueden quitar platos de
+        la cima del montón.
+      </RegularText>
+
+      <StackInteractiveExample />
+
+      <Heading1 text="Colas o LIFO's" />
+
+      <RegularText>
+        El concepto de
+
+        <Space />
+
+        <BoldText>cola o LIFO (<ItalicText>Last In First Out</ItalicText>)</BoldText>
+
+        <Space />
+
+        describe un <BoldText>comportamiento específico</BoldText> de una lista
+        enlazada donde
+      </RegularText>
+
+      <UnorderedList>
+        <RegularText>
+          Solo se pueden insertar elementos en el <BoldText>inicio de la lista</BoldText>.
+        </RegularText>
+
+        <RegularText>
+          Solo se pueden extraer elementos del <BoldText>final de la lista</BoldText>.
+        </RegularText>
+      </UnorderedList>
+
+      <RegularText>
+        Un ejemplo de este comportamiento es una fila personas en la farmacia.
+        Las últimas personas en llegar a la farmacia se posicionan detrás de
+        las que ya estaban en la fila. La primera persona en llegar, es decir
+        la que está en el frente de la fila, es la primera en ser atendida, por
+        ende, en irse de la farmacia.
+      </RegularText>
+
+      <QueueInteractiveExample />
+    </SectionContainer>
+  )
+}
+
+const NonLinearDynamicsSection = () => {
+  return (
+    <SectionContainer>
+      <Heading1 text="Estructuras de Datos Dinámicas No Lineales" />
 
       <RegularText>
         Las <BoldText>estructuras de datos dinámicas no lineales</BoldText> son
@@ -432,7 +650,7 @@ const DynamicsSection = () => {
         estructura.
       </RegularText>
 
-      <Heading2 text="Árboles" />
+      <Heading1 text="Árboles" />
 
       <RegularText>
         Los <BoldText>árboles</BoldText> son estructuras de datos dinámicas no
@@ -467,15 +685,127 @@ const DynamicsSection = () => {
         </RegularText>
       </UnorderedList>
 
-      <Heading2 text="Grafos" />
+      <RegularText>
+        Además, existe un tipo de árbol binario peculiar, el
+
+        <Space />
+
+        <BoldText>árbol binario de búsqueda</BoldText>. Este cumple la característica
+        de que cuando un nodo se inserta, este se inserta <ItalicText>en orden</ItalicText>.
+      </RegularText>
+
+      <RegularText>
+        Un árbol binario se puede <BoldText>recorrer</BoldText> en cualquiera de
+        tres órdenes:
+      </RegularText>
+
+      <UnorderedList>
+        <RegularText>
+          <BoldText>Preorden</BoldText>:
+
+          <OrderedList>
+            <RegularText>
+              La raíz
+            </RegularText>
+
+            <RegularText>
+              Recursivamente la rama izquierda
+            </RegularText>
+
+            <RegularText>
+              Recursivamente la rama derecha
+            </RegularText>
+          </OrderedList>
+        </RegularText>
+
+        <RegularText>
+          <BoldText>Enorden</BoldText>:
+
+          <OrderedList>
+            <RegularText>
+              Recursivamente la rama izquierda
+            </RegularText>
+
+            <RegularText>
+              La raíz
+            </RegularText>
+
+            <RegularText>
+              Recursivamente la rama derecha
+            </RegularText>
+          </OrderedList>
+        </RegularText>
+
+        <RegularText>
+          <BoldText>Posorden</BoldText>:
+
+          <OrderedList>
+            <RegularText>
+              Recursivamente la rama izquierda
+            </RegularText>
+
+            <RegularText>
+              Recursivamente la rama derecha
+            </RegularText>
+
+            <RegularText>
+              La raíz
+            </RegularText>
+          </OrderedList>
+        </RegularText>
+      </UnorderedList>
+
+      <Heading1 text="Grafos" />
 
       <RegularText>
         Los <BoldText>grafos</BoldText> son estructuras de datos dinámicas no
         lineales, donde cada nodo almacena una <BoldText>lista enlazada</BoldText>
-        de punteros a otros nodes en la estructura. De esta manera, los nodos
+
+        <Space />
+
+        de punteros a otros nodos en la estructura. De esta manera, los nodos
         de un grafo pueden tener una cantidad arbitraria de hijos, a diferencia de
         los árboles.
       </RegularText>
+
+      <RegularText>
+        Los grafos se pueden clasificar en <BoldText>dirigidos</BoldText>
+
+        <Space />
+
+        o <BoldText>no dirigidos</BoldText> según el siguiente criterio.
+      </RegularText>
+
+      <UnorderedList>
+        <RegularText>
+          <BoldText>Dirigido</BoldText>:
+
+          <Space />
+
+          Si un nodo <CodeText>A</CodeText> apunta a un nodo
+
+          <Space />
+
+          <CodeText>B</CodeText>, no necesariamente <CodeText>B</CodeText>
+
+          <Space />
+
+          apunta a <CodeText>A</CodeText>.
+        </RegularText>
+
+        <RegularText>
+          <BoldText>No Dirigido</BoldText>:
+
+          <Space />
+
+          Siempre que un nodo <CodeText>A</CodeText> apunte a un nodo
+
+          <Space />
+
+          <CodeText>B</CodeText>, entonces <CodeText>B</CodeText> también
+          apunta a <CodeText>A</CodeText>.
+        </RegularText>
+      </UnorderedList>
     </SectionContainer>
   )
 }
@@ -498,7 +828,7 @@ const routingConfiguration = {
     },
     {
       title: "Estáticas",
-      route: "static/",
+      route: "statics/",
       component: <StaticsSection />
     },
     {
@@ -508,8 +838,18 @@ const routingConfiguration = {
     },
     {
       title: "Dinámicas",
-      route: "dynamic/",
+      route: "dynamics/",
       component: <DynamicsSection />
+    },
+    {
+      title: "Dinámicas Lineales",
+      route: "linear-dynamics/",
+      component: <LinearDynamicsSection />
+    },
+    {
+      title: "Dinámicas No Lineales",
+      route: "non-linear-dynamics/",
+      component: <NonLinearDynamicsSection />
     },
   ]
 }
