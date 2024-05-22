@@ -26,7 +26,7 @@ const Entry = ({ title, onClick, isSelected }) => {
     return (
         <div
             {...hoveringEvents}
-            onClick={onClick}
+            onClick={isSelected ? null : onClick}
             className={
                 `bg-regular_background rounded-md`
             }

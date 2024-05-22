@@ -1,7 +1,9 @@
 import './index.css'
 import 'animate.css'
+import { useEffect } from 'react'
 import {
   createBrowserRouter,
+  useNavigate,
   RouterProvider,
   Outlet
 } from 'react-router-dom'
@@ -56,6 +58,12 @@ const units = [
 
 const Root = () => {
   const [isShowingMenu, setIsShowingMenu] = useState(false)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    /* Default route */
+    navigate("programming-fundamentals/basics/glossary")
+  }, [])
 
   return (
     <div className="flex flex-col w-full h-screen max-h-screen">
