@@ -703,6 +703,11 @@ const attachments = [
     icon: <IoExtensionPuzzleSharp />,
     title: "Ejercicio de PSeint: Estructuras de control, vectores y matrices",
     link: "https://drive.google.com/file/d/1qo7tnTgENJD4GfLIV-pxIOq-QG1EHpBK/view?usp=sharing"
+  },
+  {
+    icon: <IoExtensionPuzzleSharp />,
+    title: "Práctica #3: Estructuras de Datos",
+    link: "https://drive.google.com/file/d/10CGFIIhHN1lhMR_1T8_qqdLYjbApc9B-/view?usp=sharing"
   }
 ]
 

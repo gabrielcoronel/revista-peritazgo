@@ -13,6 +13,7 @@ import {
 } from '../../components/Typography'
 import { BsFillBookmarkFill } from 'react-icons/bs'
 import { FaAnglesDown } from 'react-icons/fa6'
+import { IoExtensionPuzzleSharp } from 'react-icons/io5'
 
 import TableFigure from '../../../public/databases-figures/table.svg'
 import EntityFigure from '../../../public/databases-figures/entity.svg'
@@ -489,6 +490,11 @@ const attachments = [
   {
     icon: <BsFillBookmarkFill />,
     title: "Captain, F. A. (2015). Six-Step Relational Database Design. (2a. ed.). Fidel A. Captain."
+  },
+  {
+    icon: <IoExtensionPuzzleSharp />,
+    title: "Práctica #4: Bases de Datos",
+    link: "https://drive.google.com/file/d/1jAXx1o4f4tZpHSwoBIHDXAoR1SZ3DRP4/view?usp=sharing"
   }
 ]
 

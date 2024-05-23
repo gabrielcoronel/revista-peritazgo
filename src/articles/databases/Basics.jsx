@@ -9,6 +9,7 @@ import {
   CodeText,
   Space
 } from '../../components/Typography'
+import { IoExtensionPuzzleSharp } from 'react-icons/io5'
 
 import DataHierarchyFigure from '../../../public/databases-figures/data-hierarchy.svg'
 
@@ -99,6 +100,14 @@ const DataHierarchySection = () => {
   )
 }
 
+const attachments = [
+  {
+    icon: <IoExtensionPuzzleSharp />,
+    title: "Práctica #4: Bases de Datos",
+    link: "https://drive.google.com/file/d/1jAXx1o4f4tZpHSwoBIHDXAoR1SZ3DRP4/view?usp=sharing"
+  }
+]
+
 const routingConfiguration = [
   {
     title: "Jerarquía de Datos",
@@ -112,6 +121,7 @@ export default () => {
     <ArticleContainer
       title="Bases de Datos"
       routingConfiguration={routingConfiguration}
+      attachments={attachments}
     >
       <RegularText>
         Una <BoldText>base de datos</BoldText> es un conjunto de datos relacionados
