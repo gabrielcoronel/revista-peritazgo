@@ -225,7 +225,7 @@ const attachments = [
   {
     icon: <IoExtensionPuzzleSharp />,
     title: "Práctica #2: Pseudocódigo y Diagramas de Flujo",
-    link: "https://drive.google.com/file/d/16LdLBhjuEYJVwATn--o0eYmB080yThVU/view?usp=sharing"
+    link: "https://drive.google.com/file/d/1tPmwvNJL_7QhPJvWPdBzvPzQojK7B88C/view?usp=sharing"
   }
 ]
 
