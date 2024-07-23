@@ -17,7 +17,24 @@ import { IoClose } from 'react-icons/io5'
 
 const units = [
   {
-    name: "Fundamentos de Programación",
+    name: "Tecnologías de la Información (TI)",
+    topics: [
+      {
+        name: "Introducción a las Bases de Datos",
+        route: "databases/basics/"
+      },
+      {
+        name: "Bases de Datos Relacionales",
+        route: "databases/relational/"
+      }
+    ]
+  },
+  {
+    name: "Emprendimiento e innovación",
+    topics: []
+  },
+  {
+    name: "Programación para web",
     topics: [
       {
         name: "Conceptos Básicos",
@@ -42,17 +59,16 @@ const units = [
     ]
   },
   {
-    name: "Bases de Datos",
-    topics: [
-      {
-        name: "Conceptos Básicos",
-        route: "databases/basics/"
-      },
-      {
-        name: "Bases de Datos Relacionales",
-        route: "databases/relational/"
-      }
-    ]
+    name: "Diseño de software",
+    topics: []
+  },
+  {
+    name: "Soporte TI",
+    topics: []
+  },
+  {
+    name: "English Oriented To Web Development",
+    topics: []
   }
 ]
 
