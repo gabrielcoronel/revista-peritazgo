@@ -13,6 +13,7 @@ import FloatingActionButton from './components/FloatingActionButton'
 import ProgrammingFundamentalsArticles from './articles/programming-fundamentals'
 import DatabasesArticles from './articles/databases'
 import EnergyArticles from './articles/energy'
+import DigitalTechnologyArticles from './articles/digital-technology'
 import { FiMenu } from 'react-icons/fi'
 import { IoClose } from 'react-icons/io5'
 
@@ -35,6 +36,10 @@ const units = [
       {
         name: "Instalaciones Eléctricas Residenciales",
         route: "energy/housing"
+      },
+      {
+        name: "Tecnologías Digitales",
+        route: "digital-technology/digital-technologies"
       }
     ]
   },
@@ -158,6 +163,10 @@ const router = createBrowserRouter([
       {
         path: "energy/housing/*",
         element: <EnergyArticles.ResidentialElectricalInstallations />
+      },
+      {
+        path: "digital-technology/digital-technologies/*",
+        element: <DigitalTechnologyArticles.DigitalTechnologies />
       }
     ]
   }
