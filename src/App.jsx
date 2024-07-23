@@ -12,6 +12,7 @@ import Menu from './components/Menu'
 import FloatingActionButton from './components/FloatingActionButton'
 import ProgrammingFundamentalsArticles from './articles/programming-fundamentals'
 import DatabasesArticles from './articles/databases'
+import EnergyArticles from './articles/energy'
 import { FiMenu } from 'react-icons/fi'
 import { IoClose } from 'react-icons/io5'
 
@@ -26,6 +27,14 @@ const units = [
       {
         name: "Bases de Datos Relacionales",
         route: "databases/relational/"
+      },
+      {
+        name: "Eficiencia Energética",
+        route: "energy/efficiency"
+      },
+      {
+        name: "Instalaciones Eléctricas Residenciales",
+        route: "energy/housing"
       }
     ]
   },
@@ -141,6 +150,14 @@ const router = createBrowserRouter([
       {
         path: "databases/relational/*",
         element: <DatabasesArticles.RelationalDatabases />
+      },
+      {
+        path: "energy/efficiency/*",
+        element: <EnergyArticles.EnergeticEfficiency />
+      },
+      {
+        path: "energy/housing/*",
+        element: <EnergyArticles.ResidentialElectricalInstallations />
       }
     ]
   }
