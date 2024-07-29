@@ -396,8 +396,18 @@ const TodaySection = () => {
 const attachments = [
   {
     icon: <RiSlideshowFill />,
-    title: "Presentación sobre xxx",
-    // link: ""
+    title: "Presentación del Grupo #1",
+    link: "https://www.canva.com/design/DAGH1plWKZU/f3X60SiBO1proHku8HdTpg/edit"
+  },
+  {
+    icon: <RiSlideshowFill />,
+    title: "Presentación del Grupo #2",
+    link: "https://www.canva.com/design/DAGHf8YI9Zk/HFTa9TCPkNUUKaoW3rL-zQ/edit?utm_content=DAGHf8YI9Zk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+  },
+  {
+    icon: <RiSlideshowFill />,
+    title: "Presentación del Grupo #3",
+    link: "https://www.canva.com/design/DAGHM14fTcQ/bAAQZp1aI0s4-E62_58Xjg/edit?utm_content=DAGHM14fTcQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
   }
 ]
 
