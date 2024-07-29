@@ -11,6 +11,7 @@ import { useState } from 'react'
 import Menu from './components/Menu'
 import FloatingActionButton from './components/FloatingActionButton'
 import ProgrammingFundamentalsArticles from './articles/programming-fundamentals'
+import ObjectOrientedProgrammingArticles from './articles/object-oriented-programming'
 import DatabasesArticles from './articles/databases'
 import EnergyArticles from './articles/energy'
 import DigitalTechnologyArticles from './articles/digital-technology'
@@ -69,6 +70,10 @@ const units = [
       {
         name: "Estructuras de Datos",
         route: "programming-fundamentals/data-structures/"
+      },
+      {
+        name: "Programación Orientada a Objetos",
+        route: "programming-fundamentals/object-oriented-programming/"
       }
     ]
   },
@@ -147,6 +152,10 @@ const router = createBrowserRouter([
       {
         path: "programming-fundamentals/data-structures/*",
         element: <ProgrammingFundamentalsArticles.DataStructures />
+      },
+      {
+        path: "programming-fundamentals/object-oriented-programming/*",
+        element: <ObjectOrientedProgrammingArticles.ObjectOrientedProgramming />
       },
       {
         path: "databases/basics/*",

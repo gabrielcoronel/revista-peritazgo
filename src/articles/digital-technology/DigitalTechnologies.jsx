@@ -6,7 +6,6 @@ import {
   RegularText,
   BoldText,
   ItalicText,
-  CodeText,
   Space
 } from '../../components/Typography'
 import UnorderedList from '../../components/UnorderedList'
