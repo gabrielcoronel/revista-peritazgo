@@ -10,6 +10,12 @@ import {
   CodeText
 } from '../../components/Typography'
 import UnorderedList from '../../components/UnorderedList'
+import Figure from '../../components/Figure'
+import ClassObjectsFigure from '../../../public/object-oriented-programming-figures/class-objects.png'
+import AbstractionFigure from '../../../public/object-oriented-programming-figures/abstraction.jpg'
+import InheritanceFigure from '../../../public/object-oriented-programming-figures/inheritance.png'
+import PolymorphismFigure from '../../../public/object-oriented-programming-figures/polymorphism.png'
+import EncapsulationFigure from '../../../public/object-oriented-programming-figures/encapsulation.png'
 
 const ClassesObjectsSection = () => {
   return (
@@ -89,6 +95,11 @@ const ClassesObjectsSection = () => {
 
         <CodeText>A</CodeText>.
       </RegularText>
+
+      <Figure
+        image={ClassObjectsFigure}
+        caption="Una clase instanciando varios objetos"
+      />
     </SectionContainer>
   )
 }
@@ -102,44 +113,54 @@ const MainFeaturesSection = () => {
         El paradigma de la programación orientada a objetos establece cuatro principales características.
       </RegularText>
 
-      <UnorderedList>
-        <RegularText>
-          <BoldText>Encapsulamiento:</BoldText>
+      <Heading2 text="Encapsulamiento" />
 
-          <Space />
+      <RegularText>
+        El <BoldText>encapsulamiento</BoldText> se refiere a la capacidad de restringir el acceso
+        a los atributos de un objeto para otros objetos externos.
+      </RegularText>
 
-          El <BoldText>encapsulamiento</BoldText> se refiere a la capacidad de restringir el acceso
-          a los atributos de un objeto para otros objetos externos.
-        </RegularText>
+      <Figure
+        image={EncapsulationFigure}
+        caption="Encapsulamiento"
+      />
 
-        <RegularText>
-          <BoldText>Herencia:</BoldText>
+      <Heading2 text="Herencia" />
 
-          <Space />
+      <RegularText>
+        La <BoldText>herencia</BoldText> se refiere a la capacidad de definir nuevas clases
+        a partir de clases ya existentes, reutlizando sus atributos y metodos.
+      </RegularText>
 
-          La <BoldText>herencia</BoldText> se refiere a la capacidad de definir nuevas clases
-          a partir de clases ya existentes, reutlizando sus atributos y metodos.
-        </RegularText>
+      <Figure
+        image={InheritanceFigure}
+        caption="Herencia"
+      />
 
-        <RegularText>
-          <BoldText>Polimorfismo:</BoldText>
+      <Heading2 text="Polimorfismo" />
 
-          <Space />
+      <RegularText>
+        El <BoldText>polimorfismo</BoldText> se refiere a la capacidad de que un mismo método
+        realice diferentes acciones dependiendo del objeto en el que vive.
+      </RegularText>
 
-          El <BoldText>polimorfismo</BoldText> se refiere a la capacidad de que un mismo método
-          realice diferentes acciones dependiendo del objeto en el que vive.
-        </RegularText>
+      <Figure
+        image={PolymorphismFigure}
+        caption="Polimorfismo"
+      />
 
-        <RegularText>
-          <BoldText>Abstracción:</BoldText>
+      <Heading2 text="Abstracción" />
 
-          <Space />
+      <RegularText>
+        El <BoldText>abstracción</BoldText> se refiere a la capacidad de desarrollar algoritmos
+        que solo traten con <ItalicText>la esencia</ItalicText> de los objetos, ignorando temporalmente
+        los detalles y enfocándose en solo lo que se considere <ItalicText>importante</ItalicText>.
+      </RegularText>
 
-          El <BoldText>abstracción</BoldText> se refiere a la capacidad de desarrollar algoritmos
-          que solo traten con <ItalicText>la esencia</ItalicText> de los objetos, ignorando temporalmente
-          los detalles y enfocándose en solo lo que se considere <ItalicText>importante</ItalicText>.
-        </RegularText>
-      </UnorderedList>
+      <Figure
+        image={AbstractionFigure}
+        caption="Abstracción"
+      />
     </SectionContainer>
   )
 }

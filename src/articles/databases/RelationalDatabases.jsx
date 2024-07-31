@@ -5,6 +5,7 @@ import FigureCarousel from '../../components/FigureCarousel'
 import UnorderedList from '../../components/UnorderedList'
 import {
   Heading1,
+  Heading2,
   RegularText,
   BoldText,
   ItalicText,
@@ -24,6 +25,8 @@ import ForeignKeyFigure from '../../../public/databases-figures/foreign-key.svg'
 import OneToOneFigure from '../../../public/databases-figures/one-to-one.svg'
 import OneToManyFigure from '../../../public/databases-figures/one-to-many.svg'
 import ManyToManyFigure from '../../../public/databases-figures/many-to-many.svg'
+import TablePrimaryKeyFigure from '../../../public/databases-figures/table-primary-key.png'
+import TableForeignKeyFigure from '../../../public/databases-figures/table-foreign-key.jpg'
 import EntityRelationshipDiagramFigure from '../../../public/databases-figures/entity-relationship-diagram.svg'
 
 const EntityRelationshipDiagram = () => {
@@ -195,91 +198,91 @@ const TablesSection = () => {
         de registros:
       </RegularText>
 
-      <UnorderedList>
-        <RegularText>
-          <BoldText>Llave primaria</BoldText>:
+      <Heading2 text="Llave primaria" />
 
-          <Space />
+      <RegularText>
+        Campo de que identifica de <BoldText>manera única</BoldText> un
+        registro en una tabla. Por ejemplo, un campo <CodeText>cedula</CodeText>
 
-          Campo de que identifica de <BoldText>manera única</BoldText> un
-          registro en una tabla. Por ejemplo, un campo <CodeText>cedula</CodeText>
+        <Space />
 
-          <Space />
+        identifica únicamente a un registro en una tabla de personas.
+      </RegularText>
 
-          identifica únicamente a un registro en una tabla de personas.
-        </RegularText>
+      <Figure
+        image={TablePrimaryKeyFigure}
+        caption="Ejemplo de una llave primaria en una tabla"
+      />
 
-        <RegularText>
-          <BoldText>Llave alterna o candidata</BoldText>:
+      <Heading2 text="Llave alterna o candidata" />
 
-          <Space />
+      <RegularText>
+        Campo que es
 
-          Campo que es
+        <Space />
 
-          <Space />
+        <BoldText><ItalicText>potencialmente</ItalicText> una llave primaria</BoldText>.
 
-          <BoldText><ItalicText>potencialmente</ItalicText> una llave primaria</BoldText>.
+        <Space />
 
-          <Space />
+        Es decir, las llaves alternas pueden identificar de manera única un
+        registro en una tabla, sin embargo, no se usan como llaves primarias
+        debido a que esto no resultaría conveniente según el contexto. Aunque
+        en algunos casos pueden emplearse como llaves primarias. Por ejemplo,
+        un campo <CodeText>carne_empresa</CodeText> identifica únicamente a
+        un registro en una tabla de empleados, sin embargo, una llave primaria
+        más conveniente sería el campo <CodeText>cedula</CodeText>.
+      </RegularText>
 
-          Es decir, las llaves alternas pueden identificar de manera única un
-          registro en una tabla, sin embargo, no se usan como llaves primarias
-          debido a que esto no resultaría conveniente según el contexto. Aunque
-          en algunos casos pueden emplearse como llaves primarias. Por ejemplo,
-          un campo <CodeText>carne_empresa</CodeText> identifica únicamente a
-          un registro en una tabla de empleados, sin embargo, una llave primaria
-          más conveniente sería el campo <CodeText>cedula</CodeText>.
-        </RegularText>
+      <Heading2 text="Superllave" />
 
-        <RegularText>
-          <BoldText>Superllave</BoldText>:
+      <RegularText>
+        Conjunto de campos que identifican de <BoldText>manera única</BoldText>
 
-          <Space />
+        <Space />
 
-          Conjunto de campos que identifican de <BoldText>manera única</BoldText>
+        un registro en una tabla. Una superllave se diferencia de una llave
+        primaria en que una llave primaria hace referencia a
 
-          <Space />
+        <Space />
 
-          un registro en una tabla. Una superllave se diferencia de una llave
-          primaria en que una llave primaria hace referencia a
+        <BoldText>un solo campo</BoldText>. Por ejemplo, los campos
 
-          <Space />
+        <Space />
 
-          <BoldText>un solo campo</BoldText>. Por ejemplo, los campos
+        <CodeText>piso</CodeText> y <CodeText>posicion</CodeText> identifican
+        únicamente a un registro en una tabla de espacios de parqueo,
 
-          <Space />
+        <Space />
 
-          <CodeText>piso</CodeText> y <CodeText>posicion</CodeText> identifican
-          únicamente a un registro en una tabla de espacios de parqueo,
+        <BoldText>ambos campos son necesarios para esto</BoldText>.
+      </RegularText>
 
-          <Space />
+      <Heading2 text="Llave foránea" />
 
-          <BoldText>ambos campos son necesarios para esto</BoldText>.
-        </RegularText>
+      <RegularText>
+        Un campo que hace
 
-        <RegularText>
-          <BoldText>Llave foránea</BoldText>:
+        <Space />
 
-          <Space />
+        <BoldText><ItalicText>referencia</ItalicText> a una llave primaria en otra tabla</BoldText>.
+        
+        <Space />
 
-          Un campo que hace
+        Es decir, este campo funciona como llave primaria en otra tabla pero
+        no necesariamente en la presente tabla. Por ejemplo, un campo
 
-          <Space />
+        <Space />
 
-          <BoldText><ItalicText>referencia</ItalicText> a una llave primaria en otra tabla</BoldText>.
-          
-          <Space />
+        <CodeText>cedula_persona</CodeText> identifica únicamente un registro
+        en una tabla externa de personas, sin embargo esto no sucede para el
+        mismo campo en la presente tabla de mascotas.
+      </RegularText>
 
-          Es decir, este campo funciona como llave primaria en otra tabla pero
-          no necesariamente en la presente tabla. Por ejemplo, un campo
-
-          <Space />
-
-          <CodeText>cedula_persona</CodeText> identifica únicamente un registro
-          en una tabla externa de personas, sin embargo esto no sucede para el
-          mismo campo en la presente tabla de mascotas.
-        </RegularText>
-      </UnorderedList>
+      <Figure
+        image={TableForeignKeyFigure}
+        caption="Ejemplo de una llave foránea en una tabla"
+      />
     </SectionContainer>
   )
 }

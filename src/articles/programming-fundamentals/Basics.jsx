@@ -3,6 +3,7 @@ import SectionContainer from '../../components/SectionContainer'
 import OrderedList from '../../components/OrderedList'
 import UnorderedList from '../../components/UnorderedList'
 import Fragment from '../../components/Fragment'
+import Figure from '../../components/Figure'
 import FigureCarousel from '../../components/FigureCarousel'
 import {
   Heading1,
@@ -13,7 +14,8 @@ import {
   Space
 } from '../../components/Typography'
 import { BsFillBookmarkFill } from 'react-icons/bs'
-
+import VariableFigure from '../../../public/basics-figures/variable.png'
+import PointerFigure from '../../../public/basics-figures/pointer.jpg'
 import StartEndFigure from '../../../public/flowchart-figures/start-end.png'
 import ProcessFigure from '../../../public/flowchart-figures/process.png'
 import ConditionalFigure from '../../../public/flowchart-figures/conditional.png'
@@ -174,6 +176,11 @@ const VariablesSection = () => {
           </RegularText>
         </UnorderedList>
       </RegularText>
+
+      <Figure
+        image={VariableFigure}
+        caption="Representación gráfica de una variable"
+      />
     </SectionContainer>
   )
 }
@@ -217,6 +224,11 @@ const PointersSection = () => {
         <Space />
 
         <BoldText>propia dirección en memoria</BoldText>.
+
+        <Figure
+          image={PointerFigure}
+          caption="Una variable puntero"
+        />
       </RegularText>
 
       <Heading1 text="Aritmética de Punteros" />

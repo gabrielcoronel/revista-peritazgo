@@ -1,6 +1,7 @@
 import "animate.css"
 import ArticleContainer from '../../components/ArticleContainer'
 import SectionContainer from '../../components/SectionContainer'
+import Figure from '../../components/Figure'
 import Fragment from '../../components/Fragment'
 import OrderedList from '../../components/OrderedList'
 import UnorderedList from '../../components/UnorderedList'
@@ -20,8 +21,14 @@ import {
   QueueInteractiveExample
 } from '../../components/InteractiveExamples'
 import { IoExtensionPuzzleSharp } from 'react-icons/io5'
-
 import DataStructureClassificationDiagramFigure from '../../../public/data-structures-figures/data-structure-classification-diagram.png'
+import VectorFigure from '../../../public/data-structures-figures/vector.png'
+import MatrixFigure from '../../../public/data-structures-figures/matrix.png'
+import RecordFigure from '../../../public/data-structures-figures/record.png'
+import NodeFigure from '../../../public/data-structures-figures/node.png'
+import LinkedListFigure from '../../../public/data-structures-figures/linked-list.png'
+import TreeFigure from '../../../public/data-structures-figures/tree.png'
+import GraphFigure from '../../../public/data-structures-figures/graph.webp'
 
 const DataStructureClassificationDiagram = () => {
   return (
@@ -109,6 +116,11 @@ const StaticsSection = () => {
         </RegularText>
       </OrderedList>
 
+      <Figure
+        image={VectorFigure}
+        caption="Un vector"
+      />
+
       <RegularText>
         Las <BoldText>matrices</BoldText> son <BoldText>arreglos bidimensionales</BoldText>.
         Es decir, para acceder a un elemento en una matriz se ocupan dos índices,
@@ -144,6 +156,11 @@ const StaticsSection = () => {
           primera columna
         </RegularText>
       </OrderedList>
+
+      <Figure
+        image={MatrixFigure}
+        caption="Una matriz"
+      />
 
       <Heading1 text="Registros" />
 
@@ -192,6 +209,11 @@ const StaticsSection = () => {
           <CodeText>edad</CodeText>
         </RegularText>
       </OrderedList>
+
+      <Figure
+        image={RecordFigure}
+        caption="Un registro"
+      />
     </SectionContainer>
   )
 }
@@ -395,6 +417,11 @@ const DynamicsSection = () => {
         </RegularText>
       </UnorderedList>
 
+      <Figure
+        image={NodeFigure}
+        caption="Un nodo"
+      />
+
       <RegularText>
         Todas las estructuras de datos dinámicas están compuestas de varios
         nodos que <ItalicText>apuntan entre sí</ItalicText>. Es por esta razón,
@@ -453,6 +480,11 @@ const LinearDynamicsSection = () => {
         (que no haya sido apuntado por otro nodo anteriormente), a excepción del
         último nodo de la lista, que apunta a una dirección nula.
       </RegularText>
+
+      <Figure
+        image={LinkedListFigure}
+        caption="Una lista enlazada"
+      />
 
       <Heading1 text="Pilas o FIFO's" />
 
@@ -643,6 +675,11 @@ const NonLinearDynamicsSection = () => {
         </RegularText>
       </UnorderedList>
 
+      <Figure
+        image={TreeFigure}
+        caption="Un árbol"
+      />
+
       <Heading1 text="Grafos" />
 
       <RegularText>
@@ -694,6 +731,11 @@ const NonLinearDynamicsSection = () => {
           apunta a <CodeText>A</CodeText>.
         </RegularText>
       </UnorderedList>
+
+      <Figure
+        image={GraphFigure}
+        caption="Un grafo"
+      />
     </SectionContainer>
   )
 }

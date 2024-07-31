@@ -3,14 +3,21 @@ import SectionContainer from '../../components/SectionContainer'
 import {
   Heading1,
   Heading2,
+  Heading3,
   RegularText,
   BoldText,
   ItalicText,
   CodeText,
   Space
 } from '../../components/Typography'
-import UnorderedList from '../../components/UnorderedList'
+import Figure from '../../components/Figure'
 import { RiSlideshowFill } from 'react-icons/ri'
+import OhmsLawFigure from '../../../public/energy-figures/ohms-law.jpg'
+import SeriesCircuitFigure from '../../../public/energy-figures/series-circuit.jpg'
+import ParallelCircuitFigure from '../../../public/energy-figures/parallel-circuit.jpg'
+import MixedCircuitFigure from '../../../public/energy-figures/mixed-circuit.jpg'
+import OpenCircuitFigure from '../../../public/energy-figures/open-circuit.webp'
+import ElectricTagFigure from '../../../public/energy-figures/electric-tag.jpg'
 
 const BasicsSection = () => {
   return (
@@ -66,6 +73,11 @@ const BasicsSection = () => {
         del voltaje (<CodeText>V</CodeText>) y la resistencia (<CodeText>R</CodeText>).
       </RegularText>
 
+      <Figure
+        image={OhmsLawFigure}
+        caption="Triángulo mnemotécnico de la Ley de Ohm"
+      />
+
       <Heading2 text="Circuito abierto" />
 
       <RegularText>
@@ -74,6 +86,11 @@ const BasicsSection = () => {
         cuando no hay un camino conductor continuo entre los polos de una fuente de
         energía.
       </RegularText>
+
+      <Figure
+        image={OpenCircuitFigure}
+        caption="Un circuito abierto"
+      />
 
       <Heading2 text="Corto circuito" />
 
@@ -86,36 +103,43 @@ const BasicsSection = () => {
 
       <Heading2 text="Tipos de circuitos" />
 
-      <UnorderedList>
-        <RegularText>
-          <BoldText>Circuito serie:</BoldText>
+      <Heading3 text="Circuito en serie" />
 
-          <Space />
-      
-          Es aquel en el que los componentes están conectados uno tras otro en
-          un solo camino. La corriente que fluye a través de cada componente
-          es la misma, pero el voltaje se divide entre los componentes.
-        </RegularText>
+      <RegularText>
+        Es aquel en el que los componentes están conectados uno tras otro en
+        un solo camino. La corriente que fluye a través de cada componente
+        es la misma, pero el voltaje se divide entre los componentes.
+      </RegularText>
 
-        <RegularText>
-          <BoldText>Circuito paralelo:</BoldText>
+      <Figure
+        image={SeriesCircuitFigure}
+        caption="Un circuito en serie"
+      />
 
-          <Space />
-      
-          Es aquel en el que los componentes están conectados de manera que
-          cada uno de ellos está conectado directamente entre los mismos dos
-          puntos. La tensión es la misma en todos los componentes, pero la
-          corriente se divide entre ellos.
-        </RegularText>
+      <Heading3 text="Circuito en paralelo" />
 
-        <RegularText>
-          <BoldText>Circuito mixto:</BoldText>
+      <RegularText>
+        Es aquel en el que los componentes están conectados de manera que
+        cada uno de ellos está conectado directamente entre los mismos dos
+        puntos. La tensión es la misma en todos los componentes, pero la
+        corriente se divide entre ellos.
+      </RegularText>
 
-          <Space />
-      
-          Es una combinación de circuitos serie y paralelo. Tiene tanto ramas en serie como en paralelo.
-        </RegularText>
-      </UnorderedList>
+      <Figure
+        image={ParallelCircuitFigure}
+        caption="Un circuito en paralelo"
+      />
+
+      <Heading3 text="Circuito mixto" />
+
+      <RegularText>
+        Es una combinación de circuitos serie y paralelo. Tiene tanto ramas en serie como en paralelo.
+      </RegularText>
+
+      <Figure
+        image={MixedCircuitFigure}
+        caption="Un circuito en mixto"
+      />
 
       <Heading2 text="Potencia eléctrica" />
 
@@ -191,6 +215,11 @@ const ConsumptionSection = () => {
         (<CodeText>kWh/año</CodeText>), esta medidad indica cuánta energía eléctrica consumirá
         la lavadora en un <BoldText>año típico de uso</BoldText>.
       </RegularText>
+
+      <Figure
+        image={ElectricTagFigure}
+        caption="Una etiqueta eléctrica"
+      />
     </SectionContainer>
   )
 }

@@ -9,7 +9,9 @@ import {
   Space
 } from '../../components/Typography'
 import UnorderedList from '../../components/UnorderedList'
+import Figure from '../../components/Figure'
 import { RiSlideshowFill } from 'react-icons/ri'
+import PhasesFigure from '../../../public/energy-figures/phases.png'
 
 const BasicsSection = () => {
   return (
@@ -139,6 +141,11 @@ const BasicsSection = () => {
           </RegularText>
         </UnorderedList>
       </RegularText>
+
+      <Figure
+        image={PhasesFigure}
+        caption="Cable con los tres tipos de conductores"
+      />
     </SectionContainer>
   )
 }
